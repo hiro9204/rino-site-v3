@@ -339,6 +339,67 @@ section { padding: 72px 0; }
 }
 .key-msg strong { color: var(--charcoal); font-weight: 500; }
 
+/* ─── BEFORE START ─── */
+.before-sec { background: var(--cream); padding-top: 72px; padding-bottom: 72px; }
+.before-block {
+  position: relative; margin-top: 40px;
+  background: var(--white); border-radius: var(--radius);
+  padding: 32px 28px; box-shadow: var(--shadow);
+}
+.before-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 52px; font-weight: 700;
+  color: var(--primary-lt); line-height: 1; margin-bottom: 6px;
+}
+.before-title {
+  font-size: 18px; font-weight: 500; margin-bottom: 12px; color: var(--charcoal);
+}
+.before-text {
+  font-size: 14px; color: var(--mid); line-height: 2; margin-bottom: 20px;
+}
+.before-text strong { color: var(--charcoal); font-weight: 500; }
+.posture-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 0 14px;
+}
+@media (max-width: 560px) { .posture-grid { grid-template-columns: 1fr; } }
+.posture-card {
+  border-radius: 14px; padding: 22px 18px; border-top: 4px solid;
+}
+.posture-card.posture-maru { border-color: var(--back-c); background: var(--back-lt); }
+.posture-card.posture-sori { border-color: var(--knee-c); background: var(--knee-lt); }
+.posture-icon { font-size: 26px; display: block; margin-bottom: 6px; }
+.posture-name { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.posture-eg   { font-size: 12px; color: var(--mid); margin-bottom: 12px; line-height: 1.7; }
+.posture-detail {
+  display: flex; flex-direction: column; gap: 2px;
+  background: rgba(255,255,255,0.65); border-radius: 8px;
+  padding: 10px 12px; margin-bottom: 10px;
+}
+.pd-label { font-size: 10px; letter-spacing: 0.1em; color: var(--mid); }
+.pd-val   { font-size: 13px; font-weight: 500; color: var(--charcoal); }
+.posture-rec {
+  font-size: 12.5px; color: var(--primary);
+  padding-top: 8px; border-top: 1px solid var(--border);
+}
+.posture-note {
+  font-size: 12.5px; color: var(--mid); line-height: 1.8;
+  padding: 10px 14px; background: var(--cream); border-radius: 8px;
+}
+.recovery-visual {
+  background: var(--sage-lt); border-radius: 12px;
+  padding: 20px 24px; margin: 20px 0 0; text-align: center;
+}
+.rv-row { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.rv-label-good { font-size: 13px; font-weight: 600; color: var(--primary); }
+.rv-label-bad  { font-size: 13px; font-weight: 600; color: #c0392b; }
+.rv-arrow { font-size: 18px; color: var(--primary); }
+.rv-chart {
+  font-family: 'Outfit', monospace; font-size: 15px;
+  color: var(--primary); font-weight: 600; padding: 8px 0; letter-spacing: 0.05em;
+}
+.rv-timeline { font-size: 12px; color: var(--mid); }
+.rv-caption  { font-size: 12.5px; color: var(--mid); margin-top: 6px; }
+
 /* ─── WARNING ─── */
 .warning-sec { background: var(--white); padding: 36px 0; }
 .warning-box {
