@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>はじめに | りのトレ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary:    #2d5a4c;
+      --primary-lt: #e5f2ee;
+      --bg:         #f9f8f6;
+      --white:      #ffffff;
+      --charcoal:   #2A2A28;
+      --mid:        #6A6A66;
+      --border:     #E8E0D0;
+      --accent:     #d4af37;
+      --shadow:     0 2px 16px rgba(0,0,0,0.07);
+      --radius:     16px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      color: var(--charcoal);
+      background: var(--bg);
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      height: 56px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 20px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+    }
+    .nav-logo { font-size: 14px; font-weight: 500; color: var(--primary); text-decoration: none; }
+    .nav-sub  { font-size: 12px; color: var(--mid); }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(150deg, var(--primary) 0%, #3a7a68 100%);
+      color: #fff;
+      text-align: center;
+      padding: 56px 20px 48px;
+    }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 100px;
+      padding: 4px 16px;
+      font-size: 11px; letter-spacing: 0.1em;
+      margin-bottom: 18px; opacity: 0.9;
+    }
+    .hero h1 {
+      font-size: clamp(20px, 5vw, 30px);
+      font-weight: 700; line-height: 1.45;
+      margin-bottom: 14px;
+    }
+    .hero p {
+      font-size: 13px; opacity: 0.85;
+      max-width: 420px; margin: 0 auto;
+    }
+
+    /* ─── STEP STRIP ─── */
+    .steps-strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .steps-inner {
+      display: flex; min-width: max-content;
+      padding: 0 16px;
+    }
+    .step-link {
+      display: flex; align-items: center; gap: 7px;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 12px; color: var(--mid);
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .step-link:hover { color: var(--primary); border-bottom-color: var(--primary-lt); }
+    .step-dot {
+      width: 20px; height: 20px;
+      background: var(--primary); color: #fff;
+      border-radius: 50%;
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ─── MAIN ─── */
+    main { max-width: 680px; margin: 0 auto; padding: 48px 16px 80px; }
+
+    /* ─── SECTION ─── */
+    .sec { margin-bottom: 48px; }
+
+    .sec-head {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 20px;
+    }
+    .sec-num {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: var(--primary); color: #fff;
+      border-radius: 50%;
+      font-size: 16px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .sec-title {
+      font-size: clamp(16px, 4vw, 20px);
+      font-weight: 700; line-height: 1.35;
+    }
+
+    /* card */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+    .card + .card { margin-top: 12px; }
+    .card p { font-size: 14px; line-height: 1.85; }
+    .card p + p { margin-top: 12px; }
+
+    /* tissue list */
+    .tissue-list { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+    .tissue-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--bg);
+      font-size: 13px;
+    }
+    .tissue-row.pain { background: var(--primary-lt); }
+    .tissue-row-name { font-weight: 500; width: 90px; flex-shrink: 0; }
+    .tissue-row-note { color: var(--mid); line-height: 1.5; }
+    .badge-pain {
+      margin-left: auto; flex-shrink: 0;
+      background: var(--primary); color: #fff;
+      font-size: 10px; font-weight: 700;
+      padding: 2px 8px; border-radius: 100px;
+    }
+
+    /* muscle compare */
+    .muscle-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    @media (max-width: 420px) {
+      .muscle-compare { grid-template-columns: 1fr; }
+    }
+    .muscle-box {
+      border-radius: 12px; padding: 18px 16px; text-align: center;
+    }
+    .muscle-box.sabori { background: #fff8ee; border: 1.5px solid #f5c88a; }
+    .muscle-box.ganbari { background: #fff0f2; border: 1.5px solid #f4a0ae; }
+    .muscle-box-icon { font-size: 26px; margin-bottom: 8px; }
+    .muscle-box-name { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .muscle-box-desc { font-size: 12px; color: var(--mid); line-height: 1.6; }
+
+    /* insight */
+    .insight {
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: #fffbea;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      font-size: 13px; color: #5a4800; line-height: 1.7;
+    }
+
+    /* tags */
+    .tag-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .tag {
+      background: var(--primary-lt); color: var(--primary);
+      border-radius: 100px; padding: 5px 14px;
+      font-size: 12px; font-weight: 500;
+    }
+
+    /* story images */
+    .story-intro { margin-bottom: 12px; }
+    .story-grid { display: flex; flex-direction: column; gap: 14px; }
+    .story-grid img {
+      width: 100%; border-radius: 12px;
+      box-shadow: var(--shadow); display: block;
+    }
+
+    /* time bars */
+    .time-rows { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+    .time-row { display: flex; gap: 12px; align-items: flex-start; }
+    .time-badge {
+      flex-shrink: 0; margin-top: 2px;
+      padding: 3px 12px; border-radius: 100px;
+      font-size: 11px; font-weight: 700; color: #fff;
+    }
+    .time-badge.short  { background: var(--primary); }
+    .time-badge.mid    { background: #d4881a; }
+    .time-badge.long   { background: #b73030; }
+    .time-row-text { font-size: 13px; line-height: 1.7; }
+
+    /* ─── CTA ─── */
+    .cta {
+      text-align: center;
+      padding: 0 16px 80px;
+    }
+    .cta-note { font-size: 13px; color: var(--mid); margin-bottom: 20px; line-height: 1.7; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--primary); color: #fff;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 15px; font-weight: 500;
+      padding: 16px 48px; border-radius: 100px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(45,90,76,0.3);
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .cta-btn:hover { background: #214038; transform: translateY(-2px); }
+
+    /* ─── REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── FOOTER ─── */
+    footer { text-align: center; padding: 20px; font-size: 11px; color: var(--mid); border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">りのトレ</a>
+  <span class="nav-sub">はじめに（必読）</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">STEP 0 / はじめに</div>
+  <h1>りのトレを始める前に<br>知ってほしい5つのこと</h1>
+  <p>仕組みを理解してから始めると、取り組み方がまったく変わります。</p>
+</div>
+
+<!-- STEP STRIP -->
+<div class="steps-strip">
+  <div class="steps-inner">
+    <a class="step-link" href="#sec1"><span class="step-dot">1</span>痛みを感じる組織</a>
+    <a class="step-link" href="#sec2"><span class="step-dot">2</span>がんばり筋・さぼり筋</a>
+    <a class="step-link" href="#sec3"><span class="step-dot">3</span>さぼり筋は全身にある</a>
+    <a class="step-link" href="#sec4"><span class="step-dot">4</span>なぜ症状は戻るのか</a>
+    <a class="step-link" href="#sec5"><span class="step-dot">5</span>時間と回復の関係</a>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- ① -->
+  <section id="sec1" class="sec reveal">
+    <div class="sec-head">
+      <div class="sec-num">1</div>
+      <h2 class="sec-title">痛みを感じる組織は？</h2>
+    </div>
+    <div class="card">
+      <p>体の中で「痛み」を感じられる組織は限られています。まずここを知ることが大切です。</p>
+      <div class="tissue-list">
+        <div class="tissue-row pain">
+          <span class="tissue-row-name">💪 筋肉</span>
+          <span class="tissue-row-note">過緊張・肉離れで痛みが出る。痛みの根本原因になりやすい。</span>
+          <span class="badge-pain">痛む</span>
+        </div>
+        <div class="tissue-row pain">
+          <span class="tissue-row-name">🦴 骨</span>
+          <span class="tissue-row-note">骨折のとき痛みが出る。</span>
+          <span class="badge-pain">痛む</span>
+        </div>
+        <div class="tissue-row pain">
+          <span class="tissue-row-name">🔗 靭帯・腱</span>
+          <span class="tissue-row-note">損傷・断裂のとき痛みが出る。</span>
+          <span class="badge-pain">痛む</span>
+        </div>
+        <div class="tissue-row">
+          <span class="tissue-row-name">⚡ 神経</span>
+          <span class="tissue-row-note">神経そのものは痛みを感じない。周囲の組織が痛みを感じる。</span>
+        </div>
+        <div class="tissue-row">
+          <span class="tissue-row-name">🦵 関節軟骨</span>
+          <span class="tissue-row-note">痛みを感じる神経がなく、軟骨自体は痛みを感じない。</span>
+        </div>
+      </div>
+      <div class="insight">
+        💡 ヘルニアがあっても痛みがない人がいるのはこれが理由です。「画像に映った異常＝痛みの原因」とは限りません。痛みの多くは<strong>筋肉のトラブル</strong>から来ています。
+      </div>
+    </div>
+  </section>
+
+  <!-- ② -->
+  <section id="sec2" class="sec reveal">
+    <div class="sec-head">
+      <div class="sec-num">2</div>
+      <h2 class="sec-title">がんばり筋とさぼり筋</h2>
+    </div>
+    <div class="card">
+      <p>体の筋肉には大きく2種類あります。このバランスが崩れることが、痛みの根本原因です。</p>
+      <div class="muscle-compare">
+        <div class="muscle-box sabori">
+          <div class="muscle-box-icon">😴</div>
+          <div class="muscle-box-name">さぼり筋</div>
+          <div class="muscle-box-desc">脳からの指令がうまく届かず、実際にはほとんど使われていない筋肉。</div>
+        </div>
+        <div class="muscle-box ganbari">
+          <div class="muscle-box-icon">😣</div>
+          <div class="muscle-box-name">がんばり筋</div>
+          <div class="muscle-box-desc">さぼり筋の代わりに負担を一手に引き受け、過緊張して痛みを出す筋肉。</div>
+        </div>
+      </div>
+      <p style="margin-top:16px;">がんばり筋をマッサージやストレッチで緩めるだけでは根本解決になりません。<strong>さぼり筋を呼び覚まして使えるようにすること</strong>がりのトレの目的です。</p>
+      <div class="insight">
+        💡 どの筋肉がさぼっているかは<strong>人によって違います</strong>。生活習慣・仕事・体型・年齢などで一人ひとり異なります。
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ -->
+  <section id="sec3" class="sec reveal">
+    <div class="sec-head">
+      <div class="sec-num">3</div>
+      <h2 class="sec-title">さぼり筋は全身のあちこちにある</h2>
+    </div>
+    <div class="card">
+      <p>「さぼり筋は一か所だけ」ではありません。肩・腰・手首・膝・足首など、体のあらゆる場所にさぼり筋は存在します。</p>
+      <div class="tag-wrap">
+        <span class="tag">首・肩まわり</span>
+        <span class="tag">肩甲骨まわり</span>
+        <span class="tag">腸腰筋（股関節）</span>
+        <span class="tag">手首まわり</span>
+        <span class="tag">膝まわり</span>
+        <span class="tag">ふくらはぎ・すね</span>
+        <span class="tag">足の指まわり</span>
+      </div>
+      <div class="insight">
+        💡 使われない時間が長いほど、さぼり筋は増えていきます。複数の部位を一緒にケアすることが大切です。
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ -->
+  <section id="sec4" class="sec reveal">
+    <div class="sec-head">
+      <div class="sec-num">4</div>
+      <h2 class="sec-title">なぜ治療しても症状が戻るのか？</h2>
+    </div>
+    <div class="card story-intro">
+      <p>整体やマッサージで楽になっても、しばらくすると元に戻ってしまう——そのメカニズムを「株式会社ジブン」の物語で理解しましょう。</p>
+    </div>
+    <div class="story-grid">
+      <img class="reveal" src="story/jibun-01.jpg" alt="ようこそ、株式会社ジブンへ" loading="lazy">
+      <img class="reveal" src="story/jibun-02.jpg" alt="かつて活気にあふれていたオフィスに異変が" loading="lazy">
+      <img class="reveal" src="story/jibun-03.jpg" alt="残った社員も、実は大半がサボっています" loading="lazy">
+      <img class="reveal" src="story/jibun-04.jpg" alt="敏腕コンサルタント「りの」による劇的な変化" loading="lazy">
+      <img class="reveal" src="story/jibun-05.jpg" alt="外部からの刺激だけでは、根本的な解決にはなりません" loading="lazy">
+      <img class="reveal" src="story/jibun-06.jpg" alt="社長である「ジブン」の地道な努力が必要です" loading="lazy">
+      <img class="reveal" src="story/jibun-07.jpg" alt="コツコツとした積み重ねが、組織を再び動かします" loading="lazy">
+      <img class="reveal" src="story/jibun-08.jpg" alt="痛みのない、元の強いカラダへ" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ⑤ -->
+  <section id="sec5" class="sec reveal">
+    <div class="sec-head">
+      <div class="sec-num">5</div>
+      <h2 class="sec-title">ケアしなかった時間と、回復に必要な時間</h2>
+    </div>
+    <div class="card">
+      <p>さぼり筋の状態が長く続くほど、脳と筋肉をつなぐ神経回路は弱くなり、筋肉自体も細くなります。<strong>さぼっていた期間に比例して、回復にも時間がかかります。</strong></p>
+      <div class="time-rows">
+        <div class="time-row">
+          <span class="time-badge short">数週間〜数か月</span>
+          <span class="time-row-text">日が浅いほど回復も早め。早めに取り組むことが最善。</span>
+        </div>
+        <div class="time-row">
+          <span class="time-badge mid">数か月〜数年</span>
+          <span class="time-row-text">神経回路と筋力の両方が落ちている。コツコツ続けることが必要。</span>
+        </div>
+        <div class="time-row">
+          <span class="time-badge long">数年〜10年以上</span>
+          <span class="time-row-text">長期間の変化が大きい。焦らず長期的な視点で取り組む覚悟を。</span>
+        </div>
+      </div>
+      <div class="insight">
+        💡 「なかなか改善しない」と感じるのは当然のことです。必ず変わります。大切なのは<strong>毎日少しずつ続けること</strong>です。
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- CTA -->
+<div class="cta">
+  <p class="cta-note">5つのポイントを理解したら、<br>さっそくりのトレを始めましょう！</p>
+  <a class="cta-btn" href="index.html">りのトレを始める →</a>
+</div>
+
+<footer>© りのトレ</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

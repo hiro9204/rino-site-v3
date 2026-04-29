@@ -8,11 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput  = document.getElementById('searchInput');
   const searchClear  = document.getElementById('searchClear');
   const resultInfo   = document.getElementById('searchResultInfo');
-  const filterBtns   = document.querySelectorAll('.filter-btn');
   const allCards     = document.querySelectorAll('.ex-card');
   const allExSecs    = document.querySelectorAll('.ex-sec');
 
-  let currentCat = 'all';
   let searchQuery = '';
 
   // ─── Filter Logic ───
@@ -20,13 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let visibleCount = 0;
 
     allCards.forEach(card => {
-      const cardCat    = card.dataset.cat || '';
       const cardSearch = (card.dataset.search || '') + ' ' + (card.textContent || '');
-
-      const matchCat    = currentCat === 'all' || cardCat === currentCat;
       const matchSearch = searchQuery === '' || cardSearch.includes(searchQuery);
 
-      if (matchCat && matchSearch) {
+      if (matchSearch) {
         card.classList.remove('hidden');
         visibleCount++;
       } else {
@@ -36,14 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Show/hide section headers based on visible cards
     allExSecs.forEach(sec => {
-      const secCat   = sec.dataset.sectionCat || '';
       const cards    = sec.querySelectorAll('.ex-card');
       const anyVisible = Array.from(cards).some(c => !c.classList.contains('hidden'));
       sec.style.display = anyVisible ? '' : 'none';
     });
 
     // Result info
-    if (searchQuery || currentCat !== 'all') {
+    if (searchQuery) {
       resultInfo.textContent = `${visibleCount}件のトレーニングが見つかりました`;
     } else {
       resultInfo.textContent = '';
@@ -67,16 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
       applyFilter();
     });
   }
-
-  // ─── Filter Buttons ───
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentCat = btn.dataset.cat;
-      applyFilter();
-    });
-  });
 
   // ─── Navbar Toggle (Mobile) ───
   const navToggle = document.getElementById('navToggle');
@@ -103,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ─── Cat Nav: highlight active section ───
   const catLinks = document.querySelectorAll('.cat-link');
-  const sections = ['back', 'shoulder', 'hand', 'knee', 'foot', 'knowledge']
+  const sections = ['shoulder', 'back', 'hand', 'knee', 'foot', 'knowledge']
     .map(id => document.getElementById(id))
     .filter(Boolean);
 
