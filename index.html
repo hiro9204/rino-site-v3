@@ -1173,7 +1173,7 @@
     <div class="about-card">
       <img src="profile.jpg" class="about-avatar" alt="りのさん">
       <div>
-        <p class="about-name">りの</p>
+        <p class="about-name">りの＠北海道の整体師　認定作業療法士</p>
         <p class="about-role">認定作業療法士 / 整体師（個人事業主）</p>
         <div class="about-bio">
           <p>
@@ -1239,6 +1239,11 @@
   <p class="footer-copy">© りのトレ. All rights reserved.</p>
 </footer>
 
+<script>
+  if (!localStorage.getItem('rino_intro_seen')) {
+    window.location.replace('intro.html');
+  }
+</script>
 <script src="search.js"></script>
 <script src="daily-posts.js"></script>
 </body>
