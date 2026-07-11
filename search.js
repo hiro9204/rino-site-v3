@@ -134,6 +134,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ─── Reveal animation ───
+  // 主要ブロックに自動で reveal クラスを付与（HTML編集不要の演出強化）
+  document.querySelectorAll(
+    '.section-header, .profile-row, .message-body, .message-quote,' +
+    ' .concept-card, .key-msg, .before-block, .warning-box,' +
+    ' .ex-card, .k-cat-card, .k-item, .about-card, .daily-post'
+  ).forEach(el => el.classList.add('reveal'));
+
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -144,5 +151,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.08 });
 
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // 安全網：観測が動かない環境でも3秒後には全て表示する
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.active)').forEach(el => el.classList.add('active'));
+  }, 3000);
+
+  // 動的に追加される毎日投稿カードにも reveal を適用
+  const dailyList = document.getElementById('daily-posts-list');
+  if (dailyList) {
+    new MutationObserver(() => {
+      const added = dailyList.querySelectorAll('.daily-post:not(.reveal)');
+      added.forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+      });
+      // 安全網：追加分も確実に表示
+      setTimeout(() => {
+        added.forEach(el => el.classList.add('active'));
+      }, 1200);
+    }).observe(dailyList, { childList: true });
+  }
+
+  // ─── Scroll progress bar ───
+  const progressBar = document.getElementById('scroll-progress');
+  if (progressBar) {
+    window.addEventListener('scroll', () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+    }, { passive: true });
+  }
+
+  // ─── Back to top ───
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('show', window.scrollY > 600);
+    }, { passive: true });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
 });

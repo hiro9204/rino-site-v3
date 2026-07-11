@@ -8,17 +8,20 @@
   <meta name="description" content="北海道で19年のキャリアを持つ認定作業療法士・整体師のりのが発信する、部位・症状別の身体ケア教室。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#1E4A3C">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div id="scroll-progress"></div>
 
 <!-- ─── NAVBAR ─── -->
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <img src="profile.jpg" alt="りのさん" class="nav-icon">
-      <span><strong>りの@北海道の整体師　認定作業療法士</strong></span>
+      <span><strong>りの@北海道の整体師</strong><small class="nav-logo-sub">認定作業療法士</small></span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="メニュー">
       <span></span><span></span><span></span>
@@ -48,8 +51,7 @@
       身体のトラブルで悩む人を<br><em>ひとりでも減らしたい。</em>
     </h1>
     <p class="hero-lead">
-      北海道の認定作業療法士・整体師「りの」が、毎日投稿し続けてきた<br>
-      身体の知識とオリジナル自主トレ（りのトレ）を、部位・症状ごとに整理しました。
+      北海道の認定作業療法士・整体師「りの」が、毎日投稿し続けてきた身体の知識とオリジナル自主トレ（りのトレ）を、部位・症状ごとに整理しました。
     </p>
     <div class="hero-cats">
       <a href="#shoulder" class="hero-cat hc-shoulder">🟢 首・肩</a>
@@ -58,13 +60,29 @@
       <a href="#knee"     class="hero-cat hc-knee">🟡 太もも・膝</a>
       <a href="#foot"     class="hero-cat hc-foot">🟣 脛・足</a>
     </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">19<small>年+</small></span>
+        <span class="hero-stat-label">リハビリ専門職</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">300<small>回+</small></span>
+        <span class="hero-stat-label">毎日投稿</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">15<small>種</small></span>
+        <span class="hero-stat-label">オリジナル自主トレ</span>
+      </div>
+    </div>
     <div class="hero-profile">
       <img src="profile.jpg" alt="りのさん" class="hero-profile-img">
       <div class="hero-profile-text">
-        <p class="hero-profile-name">りの@北海道の整体師　認定作業療法士</p>
+        <p class="hero-profile-name">りの@北海道の整体師</p>
+        <p class="hero-profile-role">認定作業療法士</p>
       </div>
     </div>
   </div>
+  <a href="#message" class="hero-scroll" aria-label="下へスクロール">SCROLL</a>
 </section>
 
 <!-- ─── SEARCH & FILTER ─── -->
@@ -760,10 +778,10 @@
     <span class="section-tag">Knowledge Library</span>
     <h2 class="section-title">りのの知識まとめ</h2>
     <p class="section-desc">
-      約2年間・230回以上の毎日投稿から、身体の大切な知識をテーマ別に整理しました。<br>
+      約2年間・300回以上の毎日投稿から、身体の大切な知識をテーマ別に整理しました。<br>
       気になるテーマをタップして読んでみてください。
     </p>
-    <span class="k-count-badge">📚 全230回の投稿から厳選</span>
+    <span class="k-count-badge">📚 300回以上の投稿から厳選</span>
 
     <div class="k-cat-nav">
       <div class="k-cat-card" data-kcat="basics" style="--kcat-c: var(--primary); --kcat-bg: var(--primary-lt);">
@@ -1239,6 +1257,8 @@
   </p>
   <p class="footer-copy">© りのトレ. All rights reserved.</p>
 </footer>
+
+<button id="back-to-top" aria-label="ページの先頭へ戻る">↑</button>
 
 <script src="search.js"></script>
 <script src="daily-posts.js"></script>
