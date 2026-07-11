@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>毎日投稿｜りのトレ</title>
+  <meta name="description" content="りのの「フェスまでほぼ毎日投稿」シリーズ全アーカイブ。毎朝自動更新。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#1E4A3C">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- ─── NAVBAR ─── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="profile.jpg" alt="りのさん" class="nav-icon">
+      <span><strong>りの@北海道の整体師</strong><small class="nav-logo-sub">認定作業療法士</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="intro.html">はじめに</a></li>
+      <li><a href="exercises.html">りのトレ</a></li>
+      <li><a href="knowledge.html">知識まとめ</a></li>
+      <li><a href="posts.html" class="current">毎日投稿</a></li>
+      <li><a href="about.html">りのについて</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── PAGE HERO ─── -->
+<header class="page-hero">
+  <div class="container">
+    <span class="section-tag">Daily Posts</span>
+    <h1 class="page-hero-title">毎日投稿<em>アーカイブ</em></h1>
+    <p class="page-hero-desc">りのが続けてきた「フェスまでほぼ毎日投稿」シリーズ。<br>毎朝7時すぎに最新の投稿が自動で追加されます。</p>
+  </div>
+</header>
+
+<!-- ─── 毎日投稿 ─── -->
+<section id="daily-posts" class="daily-posts-sec">
+  <div class="container">
+    <div class="daily-posts-meta">
+      <div>
+        <span class="daily-posts-count" id="dailyPostsCount"></span>
+        <span class="daily-posts-updated" id="dailyPostsUpdated"></span>
+      </div>
+      <div class="daily-sort-toggle">
+        <button class="daily-sort-btn active" data-order="desc">最新から ▼</button>
+        <button class="daily-sort-btn" data-order="asc">最初から ▲</button>
+      </div>
+    </div>
+    <div id="daily-posts-list">
+      <div class="daily-loading">読み込み中...</div>
+    </div>
+    <div id="daily-posts-pager" class="daily-pager"></div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer id="footer">
+  <p class="footer-logo">りの<em>トレ</em></p>
+  <p class="footer-note">
+    北海道の認定作業療法士・整体師「りの」が、身体のトラブルで悩む人を<br>
+    ひとりでも減らすために発信しています。
+  </p>
+  <nav class="footer-nav">
+    <a href="index.html">ホーム</a>
+    <a href="intro.html">はじめに</a>
+    <a href="exercises.html">りのトレ</a>
+    <a href="knowledge.html">知識まとめ</a>
+    <a href="posts.html">毎日投稿</a>
+    <a href="about.html">りのについて</a>
+  </nav>
+  <p class="footer-copy">© りのトレ. All rights reserved.</p>
+</footer>
+
+<button id="back-to-top" aria-label="ページの先頭へ戻る">↑</button>
+
+<script src="search.js"></script>
+<script src="daily-posts.js"></script>
+</body>
+</html>

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>りのトレ一覧｜りのトレ</title>
+  <meta name="description" content="部位・症状別のオリジナル自主トレ15種。首・肩、腰・背中、腕・肘・手、太もも・膝、脛・足のトラブルに。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#1E4A3C">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- ─── NAVBAR ─── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="profile.jpg" alt="りのさん" class="nav-icon">
+      <span><strong>りの@北海道の整体師</strong><small class="nav-logo-sub">認定作業療法士</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="intro.html">はじめに</a></li>
+      <li><a href="exercises.html" class="current">りのトレ</a></li>
+      <li><a href="knowledge.html">知識まとめ</a></li>
+      <li><a href="posts.html">毎日投稿</a></li>
+      <li><a href="about.html">りのについて</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── PAGE HERO ─── -->
+<header class="page-hero">
+  <div class="container">
+    <span class="section-tag">Exercises</span>
+    <h1 class="page-hero-title">りのトレ<em>一覧</em></h1>
+    <p class="page-hero-desc">部位・症状別のオリジナル自主トレ。基本は「10秒×3回」。<br>症状名（例：反り腰、腱鞘炎、五十肩）でも検索できます。</p>
+  </div>
+</header>
+
+<!-- ─── 始める前に ─── -->
+<section id="before-start" class="before-sec">
+  <div class="container">
+    <span class="section-tag">Before You Start</span>
+    <h2 class="section-title">りのトレを始める前に<br><em>大切な3つのこと</em></h2>
+    <p class="section-desc">
+      りのトレを正しく活用するために、まずこの3つを知っておいてください。
+    </p>
+
+    <!-- ① 姿勢タイプ -->
+    <div class="before-block">
+      <div class="before-num">01</div>
+      <h3 class="before-title">自分の姿勢タイプを知ろう</h3>
+      <p class="before-text">
+        姿勢にはタイプがあり、タイプによって「さぼり筋」が違います。
+        まず自分がどのタイプかを知ることが、正しいトレーニング選びの第一歩です。
+        がむしゃらに鍛えるのではなく、<strong>自分のタイプに合った運動</strong>を選ぶことが大切です。
+      </p>
+      <div class="posture-grid">
+        <div class="posture-card posture-maru">
+          <span class="posture-icon">🔵</span>
+          <p class="posture-name">まる腰（受け腰）</p>
+          <p class="posture-eg">長時間座り仕事・股関節・膝関節が曲がりがちな方</p>
+          <div class="posture-detail">
+            <span class="pd-label">さぼりやすい筋肉</span>
+            <span class="pd-val">腹横筋・内側ハムストリング</span>
+          </div>
+          <div class="posture-rec">おすすめ → <strong>涅槃（腹横筋トレーニング）</strong></div>
+        </div>
+        <div class="posture-card posture-sori">
+          <span class="posture-icon">🟡</span>
+          <p class="posture-name">反り腰</p>
+          <p class="posture-eg">腰が前に反りがちな方・妊娠・出産経験がある方</p>
+          <div class="posture-detail">
+            <span class="pd-label">さぼりやすい筋肉</span>
+            <span class="pd-val">腸腰筋・後脛骨筋・足内在筋</span>
+          </div>
+          <div class="posture-rec">おすすめ → <strong>すりすり（腸腰筋トレーニング）</strong></div>
+        </div>
+      </div>
+      <p class="posture-note">
+        ※ 上半身にも「まき肩・いかり肩」「手首の内まき・外まき」などタイプがあります。
+        どの部位も自分のタイプを意識しながら、自分に合ったトレーニングを選んでください。
+      </p>
+    </div>
+
+    <!-- ② 回復の過程 -->
+    <div class="before-block">
+      <div class="before-num">02</div>
+      <h3 class="before-title">症状は「波がありながら」改善していく</h3>
+      <p class="before-text">
+        症状の回復はS&P500のチャートと同じです。上がったり下がったりを繰り返しながら、
+        右肩上がりに改善していきます。一時的に悪くなる日があっても、
+        <strong>それは後退ではなく、回復の過程</strong>です。
+      </p>
+      <div class="recovery-visual">
+        <div class="rv-row">
+          <span class="rv-label-good">良</span>
+          <span class="rv-arrow">↑</span>
+        </div>
+        <div class="rv-chart">〜 ／＼／￣＼／￣￣＼／￣￣￣↗</div>
+        <div class="rv-row">
+          <span class="rv-label-bad">悪</span>
+          <span class="rv-timeline">── 時間経過 ──→</span>
+        </div>
+        <p class="rv-caption">波を繰り返しながら、右肩上がりに回復していく</p>
+      </div>
+      <div class="key-msg" style="margin-top:16px">
+        💡 <strong>整体 × 自主トレの継続がカギ。</strong>
+        一時的に楽になっても、さぼり筋のトレーニングを続けることで根本から改善していきます。
+        調子が悪い日もあきらめず継続してください。
+      </div>
+    </div>
+
+    <!-- ③ 継続 -->
+    <div class="before-block">
+      <div class="before-num">03</div>
+      <h3 class="before-title">正しいことをコツコツ毎日続けることが大切</h3>
+      <p class="before-text">
+        りのトレは「10秒×3回」で、毎日の生活に無理なく組み込めるように設計されています。
+        副業と同じで、最初は効果を感じにくくても、<strong>コツコツ続けた先に大きな変化が生まれます。</strong>
+        焦らず、まず「今日もできた」を積み重ねてください。
+      </p>
+      <div class="key-msg">
+        💡 <strong>ストレッチ＋さぼり筋トレが最適解。</strong>
+        ストレッチは一時的な効果はありますが、さぼり筋を鍛えなければ根本改善にはなりません。
+        りのトレ（さぼり筋トレ）＋ストレッチの組み合わせが最も効果的です。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── 注意事項 ─── -->
+<section class="warning-sec">
+  <div class="container">
+    <div class="warning-box">
+      <p class="warning-title">⚠️ ご確認ください</p>
+      <ul class="warning-list">
+        <li>トレーニング中・後に痛みが出る場合は、すぐに中止してください</li>
+        <li>症状が強い場合や不安がある場合は、必ず医療機関を受診してください</li>
+        <li>どんな運動でも、身体の反応を確認しながら慎重に行ってください</li>
+        <li>このページの情報は医学的な治療・診断を代替するものではありません</li>
+        <li>大きな病気が潜んでいる可能性もあるため、病院への定期受診をおすすめします</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SEARCH & FILTER ─── -->
+<section id="search-section">
+  <div class="container">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="例：反り腰、腱鞘炎、膝、五十肩...">
+      <button id="searchClear" class="search-clear">✕</button>
+    </div>
+    <div class="search-result-info" id="searchResultInfo"></div>
+  </div>
+</section>
+
+<!-- ─── STICKY CATEGORY NAV ─── -->
+<nav class="cat-nav" id="cat-nav">
+  <div class="cat-nav-inner">
+    <a href="#shoulder"  class="cat-link" data-id="shoulder">🟢 首・肩</a>
+    <a href="#back"      class="cat-link" data-id="back">🔵 腰・背中</a>
+    <a href="#hand"      class="cat-link" data-id="hand">🟠 腕・肘・手</a>
+    <a href="#knee"      class="cat-link" data-id="knee">🟡 太もも・膝</a>
+    <a href="#foot"      class="cat-link" data-id="foot">🟣 脛・足</a>
+    <a href="knowledge.html" class="cat-link" data-id="knowledge">📚 知識まとめ</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════
+     EXERCISE SECTIONS
+══════════════════════════════ -->
+
+<!-- ─── 首・肩 ─── -->
+<section id="shoulder" class="ex-sec" data-section-cat="shoulder">
+  <div class="container">
+    <div class="ex-sec-header">
+      <span class="cat-pill shoulder">🟢 首・肩</span>
+    </div>
+    <h2 class="ex-sec-title">首・肩のトラブル</h2>
+    <p class="ex-sec-sub">
+      肩こり・五十肩・首こり・巻き肩に。<br>
+      肩甲骨周りのインナーマッスルを整えます。
+    </p>
+
+    <div class="ex-cards">
+
+      <div class="ex-card" data-cat="shoulder" data-search="おばけ 肩 首 肩こり 首こり 五十肩 肩甲骨">
+        <div class="ex-card-body">
+          <p class="ex-name">おばけ<span class="ex-name-sub">肩・首まわりのトレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag shoulder">肩こり</span>
+            <span class="ex-tag shoulder">首こり</span>
+            <span class="ex-tag shoulder">五十肩</span>
+          </div>
+          <p class="ex-desc">
+            A→B→Cの3ステップで行う肩・首まわりのトレーニング。<br>
+            右・左それぞれ行います。肩に力感を感じられるか確認しながら行ってください。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-obake">
+            <img src="upper/obake-a-r.png" alt="おばけ A 右">
+            <img src="upper/obake-a-l.png" alt="おばけ A 左">
+            <img src="upper/obake-b-r.png" alt="おばけ B 右">
+            <img src="upper/obake-b-l.png" alt="おばけ B 左">
+            <img src="upper/obake-c-r.png" alt="おばけ C 右">
+            <img src="upper/obake-c-l.png" alt="おばけ C 左">
+          </div>
+          <span class="img-count">6枚</span>
+        </div>
+        <p class="swipe-hint">← A→B→C の順にスワイプ →</p>
+      </div>
+
+      <div class="ex-card" data-cat="shoulder" data-search="つる 肩甲骨 肩こり 肩甲骨のこり 背中の張り">
+        <div class="ex-card-body">
+          <p class="ex-name">つる<span class="ex-name-sub">肩甲骨まわりのトレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag shoulder">肩こり</span>
+            <span class="ex-tag shoulder">肩甲骨のこり</span>
+            <span class="ex-tag back">背中の張り</span>
+          </div>
+          <p class="ex-desc">
+            肩甲骨まわりを鍛える3ステップのトレーニング。<br>
+            肩甲骨が内側に引き寄せられる感覚を意識しながら行ってください。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-tsuru">
+            <img src="upper/tsuru-a-r.png" alt="つる A 右">
+            <img src="upper/tsuru-a-l.png" alt="つる A 左">
+            <img src="upper/tsuru-b-r.png" alt="つる B 右">
+            <img src="upper/tsuru-b-l.png" alt="つる B 左">
+            <img src="upper/tsuru-c-r.png" alt="つる C 右">
+            <img src="upper/tsuru-c-l.png" alt="つる C 左">
+          </div>
+          <span class="img-count">6枚</span>
+        </div>
+        <p class="swipe-hint">← A→B→C の順にスワイプ →</p>
+      </div>
+
+      <div class="ex-card" data-cat="shoulder" data-search="ふりそでぎゅー ふりそで 腕 肩こり 巻き肩 二の腕のたるみ 上腕">
+        <div class="ex-card-body">
+          <p class="ex-name">ふりそでぎゅー<span class="ex-name-sub">腕・肩のトレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag shoulder">肩こり</span>
+            <span class="ex-tag shoulder">巻き肩</span>
+            <span class="ex-tag shoulder">二の腕のたるみ</span>
+          </div>
+          <p class="ex-desc">
+            腕・肩まわりを整えるトレーニング。<br>
+            「ふりそで」の部分（二の腕の裏）にしっかり力が入っているか確認しながら行ってください。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-furisode">
+            <img src="upper/furisode-r.png" alt="ふりそでぎゅー 右">
+            <img src="upper/furisode-l.png" alt="ふりそでぎゅー 左">
+            <img src="upper/furisode-r2.png" alt="ふりそでぎゅー（別アングル）">
+          </div>
+          <span class="img-count">3枚</span>
+        </div>
+        <p class="swipe-hint">← 右・左・アングル別 →</p>
+      </div>
+
+      <div class="ex-card" data-cat="shoulder" data-search="肩ぽわん 肩インナーマッスル 五十肩 肩こり 肩の動かしにくさ 肩関節周囲炎">
+        <div class="ex-card-body">
+          <p class="ex-name">肩ぽわん<span class="ex-name-sub">肩インナーマッスルのトレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag shoulder">五十肩</span>
+            <span class="ex-tag shoulder">肩こり</span>
+            <span class="ex-tag shoulder">肩の動かしにくさ</span>
+          </div>
+          <p class="ex-desc">
+            五十肩（肩関節周囲炎）の改善に重要な肩インナーマッスルのトレーニング。<br>
+            手のひらの特定の点を押しながら行います。<br>
+            肩関節がスムーズに動くよう、じんわり意識しながら行ってください。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-katapown">
+            <img src="upper/katapown-r.png" alt="肩ぽわん 右">
+            <img src="upper/katapown-l.png" alt="肩ぽわん 左">
+          </div>
+          <span class="img-count">2枚</span>
+        </div>
+        <p class="swipe-hint">← 右・左 →</p>
+      </div>
+
+      <div class="ex-card" data-cat="shoulder" data-search="脇がち 脇 肩こり 脇まわりのこり 姿勢改善">
+        <div class="ex-card-body">
+          <p class="ex-name">脇がち<span class="ex-name-sub">脇・肩まわりのトレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag shoulder">肩こり</span>
+            <span class="ex-tag shoulder">脇まわりのこり</span>
+            <span class="ex-tag shoulder">姿勢改善</span>
+          </div>
+          <p class="ex-desc">
+            脇・肩まわりを鍛えるトレーニング。<br>
+            脇の下から肩にかけて力が入っていることを確認しながら行ってください。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-wakigachi">
+            <img src="upper/wakigachi-r.png" alt="脇がち 右">
+            <img src="upper/wakigachi-l.png" alt="脇がち 左">
+          </div>
+          <span class="img-count">2枚</span>
+        </div>
+        <p class="swipe-hint">← 右・左 →</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── 腰・背中 ─── -->
+<section id="back" class="ex-sec" data-section-cat="back">
+  <div class="container">
+    <div class="ex-sec-header">
+      <span class="cat-pill back">🔵 腰・背中</span>
+    </div>
+    <h2 class="ex-sec-title">腰・背中のトラブル</h2>
+    <p class="ex-sec-sub">
+      腰痛・反り腰・丸腰・背中のこり・姿勢改善に。<br>
+      「さぼりやすい」腹横筋・腸腰筋・背中の筋肉を鍛えます。
+    </p>
+
+    <div class="ex-cards">
+
+      <div class="ex-card" data-cat="back" data-search="涅槃 ねはん 腹横筋 腰痛 丸腰 猫背腰 座っていると腰が痛い 膝の内側 脛の内側 排尿コントロール">
+        <div class="ex-card-body">
+          <p class="ex-name">涅槃（ねはん）<span class="ex-name-sub">腹横筋トレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag back">腰痛</span>
+            <span class="ex-tag back">丸腰・猫背腰</span>
+            <span class="ex-tag back">座っていると腰が痛い</span>
+            <span class="ex-tag back">膝の内側の痛み</span>
+            <span class="ex-tag back">脛の内側の痛み</span>
+            <span class="ex-tag back">排尿コントロール</span>
+          </div>
+          <p class="ex-desc">
+            内臓の位置を正常に保ち、姿勢を支える「腹横筋」のトレーニング。<br>
+            丸腰（腰が丸くなって膝も曲がった姿勢）の方に特におすすめ。<br>
+            右・左それぞれ行います。股関節から腸骨にかけて力を感じればOK。<br>
+            太ももが上がらないように注意しながら行ってください。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-nehan">
+            <img src="upper/nehan-r-a.png" alt="涅槃 右 ステップA">
+            <img src="upper/nehan-r-b.png" alt="涅槃 右 ステップB">
+            <img src="upper/nehan-l-a.png" alt="涅槃 左 ステップA">
+            <img src="upper/nehan-l-b.png" alt="涅槃 左 ステップB">
+          </div>
+          <span class="img-count">4枚</span>
+        </div>
+        <p class="swipe-hint">← スワイプでステップを確認 →</p>
+      </div>
+
+      <div class="ex-card" data-cat="back" data-search="すりすり 腸腰筋 反り腰 腰痛 仙腸関節炎 胃下垂 膝の痛み 排尿">
+        <div class="ex-card-body">
+          <p class="ex-name">すりすり<span class="ex-name-sub">腸腰筋トレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag back">反り腰</span>
+            <span class="ex-tag back">腰痛（仙腸関節炎）</span>
+            <span class="ex-tag back">胃下垂</span>
+            <span class="ex-tag knee">膝の痛み</span>
+            <span class="ex-tag back">排尿コントロール</span>
+          </div>
+          <p class="ex-desc">
+            腰骨から股関節をつなぐ大切な筋肉「腸腰筋」のトレーニング。<br>
+            反り腰の方・胃下垂の方に特に効果が期待できます。<br>
+            股関節の付け根に力感（使っている感じ）があればOK。<br>
+            太ももの前側や外側に力が入る場合は中止し、別の方法が必要です。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-surisuri">
+            <img src="lower/surisuri-r.png" alt="すりすり 右">
+            <img src="lower/surisuri-l.png" alt="すりすり 左">
+          </div>
+          <span class="img-count">2枚</span>
+        </div>
+        <p class="swipe-hint">← 右・左 →</p>
+      </div>
+
+      <div class="ex-card" data-cat="back" data-search="背中きゅん 背中 筋肉 背中のこり 猫背 巻き肩 姿勢改善">
+        <div class="ex-card-body">
+          <p class="ex-name">背中きゅん<span class="ex-name-sub">背中の筋肉トレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag back">背中のこり</span>
+            <span class="ex-tag back">猫背・巻き肩</span>
+            <span class="ex-tag back">姿勢改善</span>
+          </div>
+          <p class="ex-desc">
+            背中の筋肉を鍛える「上部」「下部」の2段階トレーニング。<br>
+            猫背・巻き肩・姿勢づくりに役立ちます。<br>
+            背中がきゅっと縮まる感覚を意識しながら行ってください。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-senakakyun">
+            <img src="upper/senakakyun-top-r.png" alt="背中きゅん 上 右">
+            <img src="upper/senakakyun-top-l.png" alt="背中きゅん 上 左">
+            <img src="upper/senakakyun-bot-r.png" alt="背中きゅん 下 右">
+            <img src="upper/senakakyun-bot-l.png" alt="背中きゅん 下 左">
+          </div>
+          <span class="img-count">4枚</span>
+        </div>
+        <p class="swipe-hint">← 上部→下部 / 右→左 スワイプ →</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── 腕・肘・手 ─── -->
+<section id="hand" class="ex-sec" data-section-cat="hand">
+  <div class="container">
+    <div class="ex-sec-header">
+      <span class="cat-pill hand">🟠 腕・肘・手</span>
+    </div>
+    <h2 class="ex-sec-title">腕・肘・手のトラブル</h2>
+    <p class="ex-sec-sub">
+      腱鞘炎・へバーデン結節・ブシャール結節・テニス肘・ゴルフ肘に。<br>
+      手の中の土台になる筋肉（手内在筋）を整えます。<br>
+      ※ 手首・指のトラブルは、肩や肩甲骨に原因があることも多いです。
+    </p>
+
+    <div class="ex-cards">
+
+      <div class="ex-card" data-cat="hand" data-search="小指ぎゅー 手内在筋 手首 腱鞘炎 肘の内側 ゴルフ肘 肩こり 首こり 末端冷え性">
+        <div class="ex-card-body">
+          <p class="ex-name">小指ぎゅー<span class="ex-name-sub">手内在筋・手首（小指側）のトレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag hand">腱鞘炎</span>
+            <span class="ex-tag hand">肘の内側の痛み（ゴルフ肘）</span>
+            <span class="ex-tag shoulder">肩こり・首こり</span>
+            <span class="ex-tag hand">手首の痛み</span>
+            <span class="ex-tag hand">末端冷え性（小指側）</span>
+          </div>
+          <p class="ex-desc">
+            小指・薬指を使って手内在筋を鍛えるトレーニング。<br>
+            腱鞘炎の再発防止・肘の内側の痛み（ゴルフ肘）・肩こり・首こりにも効果が期待できます。<br>
+            小指側の手首から肘にかけて力感を感じればOK。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-kogyu">
+            <img src="upper/kogyu-r.png" alt="小指ぎゅー 右">
+            <img src="upper/kogyu-l.png" alt="小指ぎゅー 左">
+          </div>
+          <span class="img-count">2枚</span>
+        </div>
+        <p class="swipe-hint">← 右・左 →</p>
+      </div>
+
+      <div class="ex-card" data-cat="hand" data-search="親指ギュー 手内在筋 手首 腱鞘炎 ヘバーデン結節 ブシャール結節 テニス肘 肘の外側 末端冷え性">
+        <div class="ex-card-body">
+          <p class="ex-name">親指ギュー<span class="ex-name-sub">手内在筋・手首（親指側）のトレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag hand">腱鞘炎</span>
+            <span class="ex-tag hand">ヘバーデン結節</span>
+            <span class="ex-tag hand">ブシャール結節</span>
+            <span class="ex-tag hand">肘の外側の痛み（テニス肘）</span>
+            <span class="ex-tag hand">末端冷え性（親指側）</span>
+          </div>
+          <p class="ex-desc">
+            親指・人差し指・中指を使って手内在筋を鍛えるトレーニング。<br>
+            指先の負担を減らし、手の土台となる筋肉をしっかり使います。<br>
+            地味な運動ですが、指や手首の痛みがある方にぜひ。<br>
+            親指側の手首から肘にかけて力感を感じればOK。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-oyagyu">
+            <img src="upper/oyagyu-r.png" alt="親指ギュー 右">
+            <img src="upper/oyagyu-l.png" alt="親指ぎゅー 左">
+          </div>
+          <span class="img-count">2枚</span>
+        </div>
+        <p class="swipe-hint">← 右・左 →</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── 太もも・膝 ─── -->
+<section id="knee" class="ex-sec" data-section-cat="knee">
+  <div class="container">
+    <div class="ex-sec-header">
+      <span class="cat-pill knee">🟡 太もも・膝</span>
+    </div>
+    <h2 class="ex-sec-title">太もも・膝のトラブル</h2>
+    <p class="ex-sec-sub">
+      膝の痛み・膝の内側の痛み・太ももの張りに。<br>
+      膝まわりの「さぼり筋」を鍛えることで、がんばり筋の負担を軽減します。
+    </p>
+
+    <div class="ex-cards">
+
+      <div class="ex-card" data-cat="knee" data-search="膝かっくん 膝 膝の痛み 膝の曲げ伸ばし 階段 腸腰筋">
+        <div class="ex-card-body">
+          <p class="ex-name">膝かっくん<span class="ex-name-sub">膝まわりのトレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag knee">膝の痛み</span>
+            <span class="ex-tag knee">膝の曲げ伸ばしが辛い</span>
+            <span class="ex-tag knee">階段の昇降が辛い</span>
+          </div>
+          <p class="ex-desc">
+            椅子に座った状態で行う膝まわりのトレーニング。<br>
+            膝の付け根の内側・腸腰筋を意識しながら行います。<br>
+            つま先は正面に向くよう注意してください。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-hizakkakkun">
+            <img src="lower/hizakkakkun-r.png" alt="膝かっくん 右">
+            <img src="lower/hizakkakkun-l.png" alt="膝かっくん 左">
+          </div>
+          <span class="img-count">2枚</span>
+        </div>
+        <p class="swipe-hint">← 右・左 →</p>
+      </div>
+
+      <div class="ex-card" data-cat="knee" data-search="内ももぎゅー 内転筋 膝の内側の痛み 内もものたるみ O脚">
+        <div class="ex-card-body">
+          <p class="ex-name">内ももぎゅー<span class="ex-name-sub">内転筋のトレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag knee">膝の内側の痛み</span>
+            <span class="ex-tag knee">内もものたるみ</span>
+            <span class="ex-tag knee">O脚</span>
+          </div>
+          <p class="ex-desc">
+            内ももの筋肉（内転筋）を鍛えるトレーニング。<br>
+            膝の内側にしっかり力が入っていることを確認しながら行ってください。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-uchimomo">
+            <img src="lower/uchimomo-r.png" alt="内ももぎゅー 右">
+            <img src="lower/uchimomo-l.png" alt="内ももぎゅー 左">
+          </div>
+          <span class="img-count">2枚</span>
+        </div>
+        <p class="swipe-hint">← 右・左 →</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── 脛・足 ─── -->
+<section id="foot" class="ex-sec" data-section-cat="foot">
+  <div class="container">
+    <div class="ex-sec-header">
+      <span class="cat-pill foot">🟣 脛・ふくらはぎ・足</span>
+    </div>
+    <h2 class="ex-sec-title">脛・ふくらはぎ・足のトラブル</h2>
+    <p class="ex-sec-sub">
+      こむら返り・ふくらはぎのこり・外反母趾・足先の冷えに。<br>
+      脛（スネ）の外側・内側の筋肉と足指の筋肉を整えます。
+    </p>
+
+    <div class="ex-cards">
+
+      <div class="ex-card" data-cat="foot" data-search="スネ夫 脛 スネ ふくらはぎのこり こむら返り 脛の痛み むくみ">
+        <div class="ex-card-body">
+          <p class="ex-name">スネ夫<span class="ex-name-sub">脛（スネ）の筋肉トレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag foot">ふくらはぎのこり</span>
+            <span class="ex-tag foot">こむら返り</span>
+            <span class="ex-tag foot">脛の痛み</span>
+            <span class="ex-tag foot">むくみ</span>
+          </div>
+          <p class="ex-desc">
+            「スネの外側（内）・内側（外）」の筋肉を鍛えるトレーニング。<br>
+            ふくらはぎが硬くなる・こむら返りが起きる本当の原因は、脛の筋肉が上手に働かないから。<br>
+            踵上げだけでは改善しない方に試してほしいトレーニングです。<br>
+            内側・外側それぞれ右・左で行います（計4パターン）。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-suneo">
+            <img src="lower/suneo-in-r.png" alt="スネ夫 内側 右">
+            <img src="lower/suneo-out-r.png" alt="スネ夫 外側 右">
+            <img src="lower/suneo-in-l.png" alt="スネ夫 内側 左">
+            <img src="lower/suneo-out-l.png" alt="スネ夫 外側 左">
+          </div>
+          <span class="img-count">4枚</span>
+        </div>
+        <p class="swipe-hint">← 内側→外側 / 右→左 スワイプ →</p>
+      </div>
+
+      <div class="ex-card" data-cat="foot" data-search="足親指ぎゅー 足指 足裏 外反母趾 足先の冷え 反り腰">
+        <div class="ex-card-body">
+          <p class="ex-name">足親指ぎゅー<span class="ex-name-sub">足指・足裏（親指側）のトレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag foot">外反母趾</span>
+            <span class="ex-tag foot">足先の冷え</span>
+            <span class="ex-tag back">反り腰</span>
+          </div>
+          <p class="ex-desc">
+            親指・人差し指・中指と足裏（付け根の親指側）を意識したトレーニング。<br>
+            外反母趾の方は、タオルを指の間に挟んで行うとより効果的です。<br>
+            足の付け根を意識してグリップする感覚を大切に。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-ashioya">
+            <img src="lower/ashioya-r.png" alt="足親指ぎゅー 右">
+            <img src="lower/ashioya-l.png" alt="足親指ぎゅー 左">
+          </div>
+          <span class="img-count">2枚</span>
+        </div>
+        <p class="swipe-hint">← 右・左 →</p>
+      </div>
+
+      <div class="ex-card" data-cat="foot" data-search="足小指ぎゅー 足指 足裏 冷え むくみ 小指 薬指 末端冷え症">
+        <div class="ex-card-body">
+          <p class="ex-name">足小指ぎゅー<span class="ex-name-sub">足指・足裏（小指側）のトレーニング</span></p>
+          <div class="ex-tags">
+            <span class="ex-tag foot">足先の冷え</span>
+            <span class="ex-tag foot">小指・薬指のトラブル</span>
+            <span class="ex-tag foot">むくみ</span>
+          </div>
+          <p class="ex-desc">
+            小指・薬指と足裏（付け根の小指側）を意識したトレーニング。<br>
+            負荷が少ない方は、自分の手で付け根を押さえながら行うのもおすすめ。<br>
+            足先の末端冷え症の改善に特に効果が期待できます。
+          </p>
+        </div>
+        <div class="img-slider">
+          <div class="img-track" id="slider-ashiko">
+            <img src="lower/ashiko-r.png" alt="足小指ぎゅー 右">
+            <img src="lower/ashiko-l.png" alt="足小指ぎゅー 左">
+          </div>
+          <span class="img-count">2枚</span>
+        </div>
+        <p class="swipe-hint">← 右・左 →</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── NEXT ─── -->
+<section class="next-sec">
+  <div class="container">
+    <div class="next-band">
+      <p class="next-band-text">身体の仕組みをもっと知りたい方へ</p>
+      <a href="knowledge.html" class="next-band-btn">📚 知識まとめを読む →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer id="footer">
+  <p class="footer-logo">りの<em>トレ</em></p>
+  <p class="footer-note">
+    北海道の認定作業療法士・整体師「りの」が、身体のトラブルで悩む人を<br>
+    ひとりでも減らすために発信しています。
+  </p>
+  <nav class="footer-nav">
+    <a href="index.html">ホーム</a>
+    <a href="intro.html">はじめに</a>
+    <a href="exercises.html">りのトレ</a>
+    <a href="knowledge.html">知識まとめ</a>
+    <a href="posts.html">毎日投稿</a>
+    <a href="about.html">りのについて</a>
+  </nav>
+  <p class="footer-copy">© りのトレ. All rights reserved.</p>
+</footer>
+
+<button id="back-to-top" aria-label="ページの先頭へ戻る">↑</button>
+
+<script src="search.js"></script>
+</body>
+</html>
