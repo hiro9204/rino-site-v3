@@ -217,6 +217,53 @@
       box-shadow: var(--shadow); display: block;
     }
 
+    /* slide viewer（PDF資料スライダー） */
+    .slide-viewer {
+      position: relative;
+      border-radius: 14px; overflow: hidden;
+      border: 1px solid var(--border);
+      background: #EFECE4;
+      margin-top: 16px;
+      box-shadow: var(--shadow);
+    }
+    .slide-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .slide-track::-webkit-scrollbar { display: none; }
+    .slide-track img {
+      flex-shrink: 0; width: 100%;
+      scroll-snap-align: start; display: block;
+    }
+    .slide-count {
+      position: absolute; bottom: 12px; right: 14px;
+      background: rgba(20,53,41,0.62); color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px; padding: 4px 12px; border-radius: 100px;
+      letter-spacing: 0.08em; pointer-events: none;
+    }
+    .slide-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--border);
+      cursor: pointer; font-size: 16px; color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+      transition: background 0.2s, transform 0.15s;
+      z-index: 2;
+    }
+    .slide-btn:hover { background: #fff; }
+    .slide-btn.prev { left: 10px; }
+    .slide-btn.next { right: 10px; }
+    .slide-hint {
+      text-align: center; font-size: 11px; color: #A8A498;
+      padding: 8px 0 0; letter-spacing: 0.14em;
+    }
+
     /* time bars */
     .time-rows { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
     .time-row { display: flex; gap: 12px; align-items: flex-start; }
@@ -350,6 +397,32 @@
         💡 どの筋肉がさぼっているかは<strong>人によって違います</strong>。生活習慣・仕事・体型・年齢などで一人ひとり異なります。
       </div>
     </div>
+    <div class="slide-viewer" data-slides>
+      <div class="slide-track">
+        <img src="slides/sabori-01.jpg" alt="痛いところを揉んでも、なぜまた痛くなるのか" loading="lazy">
+        <img src="slides/sabori-02.jpg" alt="硬くて痛い場所＝原因だと思っていませんか" loading="lazy">
+        <img src="slides/sabori-03.jpg" alt="痛みの正体は頑張りすぎている筋肉" loading="lazy">
+        <img src="slides/sabori-04.jpg" alt="関節の絶対法則：2つの筋肉の合計は常に10" loading="lazy">
+        <img src="slides/sabori-05.jpg" alt="隠れた真犯人：サボり筋" loading="lazy">
+        <img src="slides/sabori-06.jpg" alt="あなたの筋肉を診断する" loading="lazy">
+        <img src="slides/sabori-07.jpg" alt="なぜ8対2の不均衡が生まれるのか" loading="lazy">
+        <img src="slides/sabori-08.jpg" alt="マッサージの罠：なぜ痛みは必ず戻るのか" loading="lazy">
+        <img src="slides/sabori-09.jpg" alt="根本的な関係性が変わっていない" loading="lazy">
+        <img src="slides/sabori-10.jpg" alt="筋肉の関係は、ある夫婦関係に似ている" loading="lazy">
+        <img src="slides/sabori-11.jpg" alt="過労の妻とサボる夫" loading="lazy">
+        <img src="slides/sabori-12.jpg" alt="ハワイ旅行（マッサージ）という一時しのぎ" loading="lazy">
+        <img src="slides/sabori-13.jpg" alt="翌日には、また負担は8に戻る" loading="lazy">
+        <img src="slides/sabori-14.jpg" alt="解決策は夫を鍛えること" loading="lazy">
+        <img src="slides/sabori-15.jpg" alt="5対5の黄金比を目指す" loading="lazy">
+        <img src="slides/sabori-16.jpg" alt="サボり筋は、体中に隠れている" loading="lazy">
+        <img src="slides/sabori-17.jpg" alt="慢性痛を終わらせるための新しい方程式" loading="lazy">
+        <img src="slides/sabori-18.jpg" alt="痛い場所には、触らなくていい" loading="lazy">
+      </div>
+      <button class="slide-btn prev" type="button" aria-label="前のスライド">‹</button>
+      <button class="slide-btn next" type="button" aria-label="次のスライド">›</button>
+      <span class="slide-count"></span>
+    </div>
+    <p class="slide-hint">← スワイプまたは矢印でスライドを見る →</p>
   </section>
 
   <!-- ③ -->
@@ -373,6 +446,24 @@
         💡 使われない時間が長いほど、さぼり筋は増えていきます。複数の部位を一緒にケアすることが大切です。
       </div>
     </div>
+    <div class="slide-viewer" data-slides>
+      <div class="slide-track">
+        <img src="slides/report-01.jpg" alt="生体通信簿：サボり筋を再教育する" loading="lazy">
+        <img src="slides/report-02.jpg" alt="よくある誤解：ここさえ鍛えれば治る？" loading="lazy">
+        <img src="slides/report-03.jpg" alt="体は単一の機械ではない" loading="lazy">
+        <img src="slides/report-04.jpg" alt="体を5つの教科の通信簿で考えてみる" loading="lazy">
+        <img src="slides/report-05.jpg" alt="真のサボり筋＝圧倒的な0点の教科" loading="lazy">
+        <img src="slides/report-06.jpg" alt="改善のロードマップ：フェーズ1" loading="lazy">
+        <img src="slides/report-07.jpg" alt="改善のロードマップ：フェーズ2と3" loading="lazy">
+        <img src="slides/report-08.jpg" alt="停滞の罠：同じ運動への固執" loading="lazy">
+        <img src="slides/report-09.jpg" alt="動作テスト＝今日の小テスト" loading="lazy">
+        <img src="slides/report-10.jpg" alt="あなたのメニューが毎回変わる理由" loading="lazy">
+      </div>
+      <button class="slide-btn prev" type="button" aria-label="前のスライド">‹</button>
+      <button class="slide-btn next" type="button" aria-label="次のスライド">›</button>
+      <span class="slide-count"></span>
+    </div>
+    <p class="slide-hint">← スワイプまたは矢印でスライドを見る →</p>
   </section>
 
   <!-- ④ -->
@@ -382,18 +473,29 @@
       <h2 class="sec-title">なぜ治療しても症状が戻るのか？</h2>
     </div>
     <div class="card story-intro">
-      <p>整体やマッサージで楽になっても、しばらくすると元に戻ってしまう——そのメカニズムを「株式会社ジブン」の物語で理解しましょう。</p>
+      <p>整体やマッサージで楽になっても、しばらくすると元に戻ってしまう——そのメカニズムを、人体を「会社」に例えた物語で理解しましょう。</p>
     </div>
-    <div class="story-grid">
-      <img class="reveal" src="story/jibun-01.jpg" alt="ようこそ、株式会社ジブンへ" loading="lazy">
-      <img class="reveal" src="story/jibun-02.jpg" alt="かつて活気にあふれていたオフィスに異変が" loading="lazy">
-      <img class="reveal" src="story/jibun-03.jpg" alt="残った社員も、実は大半がサボっています" loading="lazy">
-      <img class="reveal" src="story/jibun-04.jpg" alt="敏腕コンサルタント「りの」による劇的な変化" loading="lazy">
-      <img class="reveal" src="story/jibun-05.jpg" alt="外部からの刺激だけでは、根本的な解決にはなりません" loading="lazy">
-      <img class="reveal" src="story/jibun-06.jpg" alt="社長である「ジブン」の地道な努力が必要です" loading="lazy">
-      <img class="reveal" src="story/jibun-07.jpg" alt="コツコツとした積み重ねが、組織を再び動かします" loading="lazy">
-      <img class="reveal" src="story/jibun-08.jpg" alt="痛みのない、元の強いカラダへ" loading="lazy">
+    <div class="slide-viewer" data-slides>
+      <div class="slide-track">
+        <img src="slides/company-01.jpg" alt="なぜ、治療してもどうせまた戻るのか" loading="lazy">
+        <img src="slides/company-02.jpg" alt="どうせ治療しても、また症状は戻るんでしょ？" loading="lazy">
+        <img src="slides/company-03.jpg" alt="おっしゃる通りです。症状は必ず戻ります。" loading="lazy">
+        <img src="slides/company-04.jpg" alt="株式会社あなたの身体の最盛期" loading="lazy">
+        <img src="slides/company-05.jpg" alt="経営悪化とリストラ（怪我・慢性的な不調）" loading="lazy">
+        <img src="slides/company-06.jpg" alt="内部崩壊：残された50人の真実" loading="lazy">
+        <img src="slides/company-07.jpg" alt="外部コンサルタント（治療家）の介入" loading="lazy">
+        <img src="slides/company-08.jpg" alt="なぜ症状は戻るのか？（コンサルタントの不在）" loading="lazy">
+        <img src="slides/company-09.jpg" alt="真の回復は組織を経営すること" loading="lazy">
+        <img src="slides/company-10.jpg" alt="社長（あなた）のミッション：継続的な業務命令" loading="lazy">
+        <img src="slides/company-11.jpg" alt="組織回復の軌跡（時間と成長）" loading="lazy">
+        <img src="slides/company-12.jpg" alt="放置した時間＝回復に必要な時間" loading="lazy">
+        <img src="slides/company-13.jpg" alt="今日から、あなたが身体の優秀な経営者に" loading="lazy">
+      </div>
+      <button class="slide-btn prev" type="button" aria-label="前のスライド">‹</button>
+      <button class="slide-btn next" type="button" aria-label="次のスライド">›</button>
+      <span class="slide-count"></span>
     </div>
+    <p class="slide-hint">← スワイプまたは矢印でスライドを見る →</p>
   </section>
 
   <!-- ⑤ -->
@@ -448,6 +550,28 @@
   setTimeout(() => {
     document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
   }, 3000);
+
+  // スライドビューア（カウンター＋矢印ボタン）
+  document.querySelectorAll('[data-slides]').forEach(viewer => {
+    const track = viewer.querySelector('.slide-track');
+    const count = viewer.querySelector('.slide-count');
+    const total = track.querySelectorAll('img').length;
+
+    function update() {
+      const w = track.clientWidth;
+      const idx = w ? Math.round(track.scrollLeft / w) + 1 : 1;
+      count.textContent = Math.min(Math.max(idx, 1), total) + ' / ' + total;
+    }
+    update();
+    track.addEventListener('scroll', update, { passive: true });
+
+    viewer.querySelector('.slide-btn.prev').addEventListener('click', () => {
+      track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
+    });
+    viewer.querySelector('.slide-btn.next').addEventListener('click', () => {
+      track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
+    });
+  });
 </script>
 
 </body>
