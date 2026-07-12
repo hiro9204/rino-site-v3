@@ -297,6 +297,19 @@
     }
     .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(20,53,41,0.4); }
 
+    /* ─── 日本語タイポグラフィ最適化 ─── */
+    .hero h1, .sec-title { text-wrap: balance; }
+    .hero p, .card p, .insight, .tissue-row-note, .muscle-box-desc,
+    .time-row-text, .cta-note { text-wrap: pretty; }
+    @supports (word-break: auto-phrase) {
+      .hero h1, .sec-title, .hero p, .card p, .insight, .cta-note {
+        word-break: auto-phrase;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero p br, .cta-note br { display: none; }
+    }
+
     /* ─── REVEAL ─── */
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }

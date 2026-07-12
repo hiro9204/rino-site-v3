@@ -1119,6 +1119,42 @@ footer {
   opacity: 0.7;
 }
 
+/* ─── 日本語タイポグラフィ最適化 ─── */
+/* 見出し：行を均等に折り返し、末尾の1〜2文字だけの行を防ぐ */
+.hero-title, .section-title, .page-hero-title, .ex-sec-title,
+.daily-posts-title, .before-title, .concept-title,
+.about-cta-title, .next-band-text, .about-name, .page-card-title {
+  text-wrap: balance;
+}
+/* 本文：孤立行（orphan）を避けて読みやすく折り返す */
+.hero-lead, .section-desc, .page-hero-desc, .ex-sec-sub,
+.message-body p, .before-text, .concept-text, .key-msg,
+.k-point, .about-bio p, .daily-posts-lead, .page-card-desc,
+.about-cta-desc, .footer-note, .ex-desc, .posture-eg, .warning-list li {
+  text-wrap: pretty;
+}
+/* 対応ブラウザでは文節（ことばのまとまり）単位で改行する */
+@supports (word-break: auto-phrase) {
+  .hero-title, .section-title, .page-hero-title, .ex-sec-title,
+  .daily-posts-title, .before-title, .concept-title,
+  .hero-lead, .section-desc, .page-hero-desc, .ex-sec-sub,
+  .concept-text, .page-card-desc, .about-cta-desc, .footer-note,
+  .next-band-text, .message-quote {
+    word-break: auto-phrase;
+  }
+}
+/* 長いURL等がはみ出さないように */
+.daily-post-body, .k-point, .message-body { overflow-wrap: anywhere; }
+
+/* スマホ：PC幅向けの改行タグを無効化し、画面幅なりに自然に折り返す */
+@media (max-width: 600px) {
+  .hero-lead br, .section-desc br, .page-hero-desc br,
+  .ex-sec-sub br, .concept-text br, .footer-note br,
+  .daily-posts-lead br, .ex-desc br {
+    display: none;
+  }
+}
+
 /* ─── ANIMATIONS ─── */
 .reveal {
   opacity: 0; transform: translateY(22px);
