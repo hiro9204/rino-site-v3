@@ -1035,12 +1035,19 @@ section { padding: 84px 0; }
   .k-cat-card-label { font-size: 14px; }
   .k-cat-submenu {
     position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
     box-shadow: none;
     border: none;
     border-top: 1px solid var(--border);
     border-radius: 0 0 12px 12px;
     margin-top: -2px;
     background: var(--kcat-bg);
+  }
+  .k-cat-card-btn[aria-expanded="true"] + .k-cat-submenu {
+    display: block;
   }
 }
 @media (max-width: 480px) {
