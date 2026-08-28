@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>知識まとめ｜りのトレ</title>
-  <meta name="description" content="300回以上の毎日投稿から、身体の大切な知識をテーマ別に整理。痛みのしくみ、ストレッチ、五十肩、腰痛、腱鞘炎など。">
+  <title>テーマ別インデックス｜りのトレ</title>
+  <meta name="description" content="りのの毎日投稿を、症状・部位のテーマ別に整理した索引。気になるテーマを選ぶと、その投稿（原文）がまとめて表示されます。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
@@ -39,516 +39,84 @@
 <!-- ─── PAGE HERO ─── -->
 <header class="page-hero">
   <div class="container">
-    <span class="section-tag">Knowledge Library</span>
-    <h1 class="page-hero-title">りのの<em>知識まとめ</em></h1>
-    <p class="page-hero-desc">約2年間・300回以上の毎日投稿から、身体の大切な知識をテーマ別に整理しました。<br>気になるテーマをタップして読んでみてください。</p>
+    <span class="section-tag">Knowledge Index</span>
+    <h1 class="page-hero-title">テーマ別<em>インデックス</em></h1>
+    <p class="page-hero-desc">症状・部位のテーマから、りのの毎日投稿を探せる索引です。<br>気になるテーマを選ぶと、その投稿（原文）がまとめて表示されます。</p>
   </div>
 </header>
 
-<!-- ─── 知識ライブラリ ─── -->
-<section id="knowledge" class="knowledge-sec">
+<!-- ─── テーマ別インデックス ─── -->
+<section class="knowledge-sec">
   <div class="container">
-    <span class="k-count-badge">📚 300回以上の投稿から厳選</span>
+    <p class="k-dir-intro">💡 各テーマの数字は、その言葉が含まれる投稿の件数です。タップすると毎日投稿ページで<strong>原文</strong>が表示されます。</p>
 
-    <div class="k-cat-nav">
-      <div class="k-cat-card" data-kcat="basics" style="--kcat-c: var(--primary); --kcat-bg: var(--primary-lt);">
-        <button class="k-cat-card-btn" type="button">
-          <span class="k-cat-card-icon">🌟</span>
-          <span class="k-cat-card-label">基礎・全般</span>
-          <span class="k-cat-card-count">11件</span>
-        </button>
-        <ul class="k-cat-submenu">
-          <li><a href="#k-pain">痛みのしくみ（基礎知識）</a></li>
-          <li><a href="#k-stretch">ストレッチの正しい知識</a></li>
-          <li><a href="#k-clinic">整体院・整骨院の正しい選び方</a></li>
-          <li><a href="#k-ad">整体・健康広告の見分け方</a></li>
-          <li><a href="#k-rom">関節の可動域（動く範囲）</a></li>
-          <li><a href="#k-nerve">神経は再生するのか？</a></li>
-          <li><a href="#k-image">運動イメージの効果</a></li>
-          <li><a href="#k-flexibility">関節の柔らかさと筋力の関係</a></li>
-          <li><a href="#k-massage">強いマッサージは必要か？</a></li>
-          <li><a href="#k-habit">自主トレを続けるための習慣化</a></li>
-          <li><a href="#k-weather">天候・気圧と痛みの関係</a></li>
-        </ul>
-      </div>
-      <div class="k-cat-card" data-kcat="shoulder" style="--kcat-c: var(--shoulder-c); --kcat-bg: var(--shoulder-lt);">
-        <button class="k-cat-card-btn" type="button">
-          <span class="k-cat-card-icon">🟢</span>
-          <span class="k-cat-card-label">首・肩</span>
-          <span class="k-cat-card-count">2件</span>
-        </button>
-        <ul class="k-cat-submenu">
-          <li><a href="#k-frozen-shoulder">五十肩・肩の拘縮</a></li>
-          <li><a href="#k-stoop">猫背・いかり肩</a></li>
-        </ul>
-      </div>
-      <div class="k-cat-card" data-kcat="back" style="--kcat-c: var(--back-c); --kcat-bg: var(--back-lt);">
-        <button class="k-cat-card-btn" type="button">
-          <span class="k-cat-card-icon">🔵</span>
-          <span class="k-cat-card-label">腰・背中</span>
-          <span class="k-cat-card-count">2件</span>
-        </button>
-        <ul class="k-cat-submenu">
-          <li><a href="#k-back-pain">腰痛・丸腰・反り腰・ぎっくり腰</a></li>
-          <li><a href="#k-stenosis">脊柱管狭窄症</a></li>
-        </ul>
-      </div>
-      <div class="k-cat-card" data-kcat="hand" style="--kcat-c: var(--hand-c); --kcat-bg: var(--hand-lt);">
-        <button class="k-cat-card-btn" type="button">
-          <span class="k-cat-card-icon">🟠</span>
-          <span class="k-cat-card-label">腕・肘・手</span>
-          <span class="k-cat-card-count">4件</span>
-        </button>
-        <ul class="k-cat-submenu">
-          <li><a href="#k-tendinitis">腱鞘炎・手首・指のトラブル</a></li>
-          <li><a href="#k-elbow">テニス肘・ゴルフ肘・野球肘</a></li>
-          <li><a href="#k-cm">CM関節症（親指の付け根の痛み）</a></li>
-          <li><a href="#k-bottle">握力があるのにペットボトルが開けられない問題</a></li>
-        </ul>
-      </div>
-      <div class="k-cat-card" data-kcat="knee" style="--kcat-c: var(--knee-c); --kcat-bg: var(--knee-lt);">
-        <button class="k-cat-card-btn" type="button">
-          <span class="k-cat-card-icon">🟡</span>
-          <span class="k-cat-card-label">太もも・膝</span>
-          <span class="k-cat-card-count">1件</span>
-        </button>
-        <ul class="k-cat-submenu">
-          <li><a href="#k-knee">膝のトラブル・膝の裏の痛み</a></li>
-        </ul>
-      </div>
-      <div class="k-cat-card" data-kcat="foot" style="--kcat-c: var(--foot-c); --kcat-bg: var(--foot-lt);">
-        <button class="k-cat-card-btn" type="button">
-          <span class="k-cat-card-icon">🟣</span>
-          <span class="k-cat-card-label">脛・足</span>
-          <span class="k-cat-card-count">3件</span>
-        </button>
-        <ul class="k-cat-submenu">
-          <li><a href="#k-calf">ふくらはぎ・こむら返り・踵上げ</a></li>
-          <li><a href="#k-cold-feet">足先の冷え・外反母趾</a></li>
-          <li><a href="#k-achilles">アキレス腱のトラブル</a></li>
-        </ul>
-      </div>
-    </div>
+    <div class="k-dir">
 
-    <div class="k-accordion">
-      <h3 class="k-group-heading" id="kgroup-basics" data-kcat="basics">
-        <span class="k-group-icon">🌟</span><span class="k-group-label">基礎・全般</span>
-      </h3>
-      <details class="k-item" id="k-pain" data-kcat="basics">
-      <summary>
-        <span class="k-icon">🔬</span>
-        <span class="k-label">痛みのしくみ（基礎知識）</span>
-        <span class="k-no">1〜10回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>痛みを感じる組織：</strong>骨・皮膚・筋肉・靭帯・腱は痛みを感じる。関節軟骨と神経そのものは痛みを感じない。神経の周囲の組織が痛みを感じる。</li>
-          <li class="k-point"><strong>ヘルニアがあっても痛くない理由：</strong>痛みの原因が必ずしもヘルニアに限らない。筋肉のトラブル（さぼり筋・がんばり筋）が主因であれば、ヘルニアがあっても痛みは出ない。</li>
-          <li class="k-point"><strong>さぼり筋：</strong>本来働くべきなのに力が入らなくなった筋肉。人によって「どこがさぼり筋か」は違う。ここを鍛えることが根本改善の鍵。</li>
-          <li class="k-point"><strong>がんばり筋：</strong>さぼり筋の代わりに頑張りすぎて硬くなり、痛みや痺れを引き起こす。ストレッチ・マッサージは一時的な効果にとどまる。</li>
-          <li class="k-point"><strong>個人に合った運動が必要：</strong>「どんな人にも効く運動はない」（日本整形外科学会ガイドライン）。身体の使い方・生活・仕事・年齢などで、さぼり筋は全員違う。</li>
-        </ul>
-        <div class="k-quote">「痛みの原因は必ずしも、痛みのある部位とは限りません。右手首の腱鞘炎が、左肩のトラブルに起因することも大いにあります。」</div>
-        <span class="k-posts-tag">関連投稿：1〜10回目</span>
+      <div class="k-dir-cat" style="--kcat-c: var(--primary);">
+        <h2 class="k-dir-head"><span class="k-dir-icon">🌟</span>基礎・全般</h2>
+        <div class="k-dir-topics">
+          <a class="k-dir-topic" href="posts.html?q=ストレッチ">ストレッチ<span class="k-dir-n">43</span></a>
+          <a class="k-dir-topic" href="posts.html?q=整体">整体・施術<span class="k-dir-n">91</span></a>
+          <a class="k-dir-topic" href="posts.html?q=マッサージ">マッサージ<span class="k-dir-n">17</span></a>
+          <a class="k-dir-topic" href="posts.html?q=可動域">関節の可動域<span class="k-dir-n">25</span></a>
+          <a class="k-dir-topic" href="posts.html?q=神経">神経・しびれ<span class="k-dir-n">53</span></a>
+          <a class="k-dir-topic" href="posts.html?q=習慣">自主トレの習慣化<span class="k-dir-n">11</span></a>
+        </div>
       </div>
-      </details>
 
-      <details class="k-item" id="k-stretch" data-kcat="basics">
-      <summary>
-        <span class="k-icon">💆</span>
-        <span class="k-label">ストレッチの正しい知識</span>
-        <span class="k-no">52〜57回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>静的ストレッチ（ゆっくり伸ばす）：</strong>運動前に行うと筋力が約5%低下し、パフォーマンスが落ちる。運動後に行うのがベスト（10秒以上・痛気持ち程度）。</li>
-          <li class="k-point"><strong>動的ストレッチ（ラジオ体操など）：</strong>運動前に行うと効果的。心拍数・血流量を上げ、身体を温める。</li>
-          <li class="k-point"><strong>伸ばしすぎの危険：</strong>筋肉の「ばね（サルコメア）」が伸びすぎると力が出にくくなる。筋繊維・膜が傷つくことも。</li>
-          <li class="k-point"><strong>ストレッチ否定派ではない：</strong>さぼり筋トレーニングと組み合わせることで最大の効果が出る。順番と目的が大切。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：52〜57回目</span>
+      <div class="k-dir-cat" style="--kcat-c: var(--shoulder-c);">
+        <h2 class="k-dir-head"><span class="k-dir-icon">🟢</span>首・肩</h2>
+        <div class="k-dir-topics">
+          <a class="k-dir-topic" href="posts.html?q=五十肩">五十肩<span class="k-dir-n">15</span></a>
+          <a class="k-dir-topic" href="posts.html?q=肩こり">肩こり<span class="k-dir-n">16</span></a>
+          <a class="k-dir-topic" href="posts.html?q=猫背">猫背・巻き肩<span class="k-dir-n">14</span></a>
+        </div>
       </div>
-      </details>
 
-      <details class="k-item" id="k-clinic" data-kcat="basics">
-      <summary>
-        <span class="k-icon">🏥</span>
-        <span class="k-label">整体院・整骨院の正しい選び方</span>
-        <span class="k-no">60〜66・78〜83回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>整体院と整骨院の違い：</strong>整骨院は柔道整復師（国家資格）が開業。急性のケガ（捻挫・打撲）が保険適用。慢性的な腰痛・肩こりは保険外。整体院は民間資格または無資格でも可。</li>
-          <li class="k-point"><strong>良い整体院の見分け方：</strong>①施術前後で評価をしてくれる ②自主トレを教えてくれる ③丁寧に初回問診をしてくれる ④自己研鑽をしている ⑤6,000円以上が目安。</li>
-          <li class="k-point"><strong>もみほぐしとの違い：</strong>もみほぐし・リラクゼーションは「リラックス目的」。身体の不調改善が目的なら、しっかり評価をしてくれる整体院へ。</li>
-          <li class="k-point"><strong>昔の怪我が影響する：</strong>若い頃の骨折・捻挫が、長年にわたって身体のバランスに影響することがある。初回問診でしっかり話せる場所を選ぼう。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：60〜66・78〜83回目</span>
+      <div class="k-dir-cat" style="--kcat-c: var(--back-c);">
+        <h2 class="k-dir-head"><span class="k-dir-icon">🔵</span>腰・背中</h2>
+        <div class="k-dir-topics">
+          <a class="k-dir-topic" href="posts.html?q=腰痛">腰痛<span class="k-dir-n">23</span></a>
+          <a class="k-dir-topic" href="posts.html?q=脊柱管狭窄症">脊柱管狭窄症<span class="k-dir-n">32</span></a>
+          <a class="k-dir-topic" href="posts.html?q=ヘルニア">ヘルニア<span class="k-dir-n">17</span></a>
+          <a class="k-dir-topic" href="posts.html?q=反り腰">反り腰<span class="k-dir-n">40</span></a>
+          <a class="k-dir-topic" href="posts.html?q=ぎっくり腰">ぎっくり腰<span class="k-dir-n">5</span></a>
+        </div>
       </div>
-      </details>
 
-      <details class="k-item" id="k-image" data-kcat="basics">
-      <summary>
-        <span class="k-icon">🧠</span>
-        <span class="k-label">運動イメージの効果</span>
-        <span class="k-no">45〜48回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>イメージするだけで筋力が上がる：</strong>2014年の研究：4週間ギプス固定しても、運動イメージ訓練をすると筋力低下が50%軽減された。</li>
-          <li class="k-point"><strong>イメージトレーニングの効果：</strong>実際の筋トレ群の約半分の効果（筋力13.5%増加）が、イメージだけで得られた。</li>
-          <li class="k-point"><strong>りのトレへの応用：</strong>「どこに力が入っているか（力感）」を意識しながら行うことで、効果が大幅にアップする。「ながら運動」より、しっかり頭も使う。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：45〜48回目</span>
+      <div class="k-dir-cat" style="--kcat-c: var(--hand-c);">
+        <h2 class="k-dir-head"><span class="k-dir-icon">🟠</span>腕・肘・手</h2>
+        <div class="k-dir-topics">
+          <a class="k-dir-topic" href="posts.html?q=手首">手首のトレーニング<span class="k-dir-n">44</span></a>
+          <a class="k-dir-topic" href="posts.html?q=腱鞘炎">腱鞘炎<span class="k-dir-n">13</span></a>
+          <a class="k-dir-topic" href="posts.html?q=テニス肘">テニス肘・ゴルフ肘<span class="k-dir-n">6</span></a>
+          <a class="k-dir-topic" href="posts.html?q=CM関節症">CM関節症（親指）<span class="k-dir-n">12</span></a>
+          <a class="k-dir-topic" href="posts.html?q=バネ指">バネ指<span class="k-dir-n">3</span></a>
+        </div>
       </div>
-      </details>
 
-      <details class="k-item" id="k-flexibility" data-kcat="basics">
-      <summary>
-        <span class="k-icon">💪</span>
-        <span class="k-label">関節の柔らかさと筋力の関係</span>
-        <span class="k-no">154〜159回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>「関節は柔らかい方が良い」は正しくない：</strong>柔らかすぎる関節は不安定で、逆にトラブルの原因になることがある。</li>
-          <li class="k-point"><strong>問題は「動きの質」：</strong>ただ柔らかいだけでなく、関節を安定させる筋力も必要。ストレッチだけで柔軟性を上げても、支える筋肉がないと悪化することも。</li>
-          <li class="k-point"><strong>りのトレを行った後に筋力テスト：</strong>施術後に筋力が落ちたら、やり方を見直す必要がある。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：154〜159回目</span>
+      <div class="k-dir-cat" style="--kcat-c: var(--knee-c);">
+        <h2 class="k-dir-head"><span class="k-dir-icon">🟡</span>太もも・膝</h2>
+        <div class="k-dir-topics">
+          <a class="k-dir-topic" href="posts.html?q=膝">膝の痛み<span class="k-dir-n">62</span></a>
+          <a class="k-dir-topic" href="posts.html?q=内転筋">内もも（内転筋）<span class="k-dir-n">4</span></a>
+        </div>
       </div>
-      </details>
 
-      <details class="k-item" id="k-massage" data-kcat="basics">
-      <summary>
-        <span class="k-icon">⚡</span>
-        <span class="k-label">強いマッサージは必要か？</span>
-        <span class="k-no">170〜172回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>アルント＝シュルツの刺激法則：</strong>弱い刺激は身体の働きを高め、強すぎる刺激は逆に働きを下げる。刺激には最適な強さがある。</li>
-          <li class="k-point"><strong>「ゴリゴリ揉まれて気持ちいい」の落とし穴：</strong>がんばり筋もさぼり筋も全部を緩ませると、身体が支えられなくなることがある。特に筋力が少ない方・華奢な方・女性に多い。</li>
-          <li class="k-point"><strong>りのが揉まない理由：</strong>「適切な筋肉がちゃんと働くようにすれば、いつも硬くなっている場所は自然と緩む」という考え方。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：170〜172回目</span>
+      <div class="k-dir-cat" style="--kcat-c: var(--foot-c);">
+        <h2 class="k-dir-head"><span class="k-dir-icon">🟣</span>脛・足</h2>
+        <div class="k-dir-topics">
+          <a class="k-dir-topic" href="posts.html?q=ふくらはぎ">ふくらはぎ<span class="k-dir-n">35</span></a>
+          <a class="k-dir-topic" href="posts.html?q=こむら返り">こむら返り<span class="k-dir-n">8</span></a>
+          <a class="k-dir-topic" href="posts.html?q=外反母趾">外反母趾<span class="k-dir-n">6</span></a>
+          <a class="k-dir-topic" href="posts.html?q=アキレス">アキレス腱<span class="k-dir-n">12</span></a>
+          <a class="k-dir-topic" href="posts.html?q=後脛骨筋">後脛骨筋<span class="k-dir-n">6</span></a>
+        </div>
       </div>
-      </details>
-
-      <details class="k-item" id="k-habit" data-kcat="basics">
-      <summary>
-        <span class="k-icon">🔁</span>
-        <span class="k-label">自主トレを続けるための習慣化</span>
-        <span class="k-no">183〜186回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>続かない本当の理由：</strong>脳の「やる気スイッチ（側坐核）」は、動き始めてから活性化する。「やる気が出てから始める」は逆効果。</li>
-          <li class="k-point"><strong>習慣化のコツ：</strong>①計画する ②面倒でもとにかく始める ③小さなご褒美を作る。無意識にできるまでには平均66日かかると言われている。</li>
-          <li class="k-point"><strong>りのトレの続け方：</strong>「10秒×3回」のシンプルさが続くための設計。まずは「できた！」を積み重ねることが大切。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：183〜186回目</span>
-      </div>
-      </details>
-
-      <details class="k-item" id="k-weather" data-kcat="basics">
-      <summary>
-        <span class="k-icon">🌧</span>
-        <span class="k-label">天候・気圧と痛みの関係</span>
-        <span class="k-no">141〜144回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>なぜ雨の日に痛むか：</strong>気圧が下がると、体内の組織が膨張して神経を圧迫する。これが痛みのシグナルを強める。</li>
-          <li class="k-point"><strong>全員が痛くなるわけではない理由：</strong>痛みの感じやすさは、その人の「神経システムの敏感さ」によって異なる。日頃から身体が整っていると影響を受けにくい。</li>
-          <li class="k-point"><strong>脳卒中の方が特に影響を受けやすい理由：</strong>神経回路の変化により、感覚信号の処理が変わっているため。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：141〜144回目</span>
-      </div>
-      </details>
-
-      <details class="k-item" id="k-ad" data-kcat="basics">
-      <summary>
-        <span class="k-icon">📣</span>
-        <span class="k-label">整体・健康広告の見分け方</span>
-        <span class="k-no">298〜300回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>整体・カイロには法的な資格制度がない：</strong>「整体師」と名乗った時点で整体師になれる。国家資格（リハビリ専門職など）と民間認定資格では、知識・技術に大きな差がある。</li>
-          <li class="k-point"><strong>手技による健康被害の実例：</strong>国民生活センターに手技施術の健康被害相談が継続的に寄せられている。危害程度の回答640件のうち約78％（498件）がその後医療機関を受診。首・腰・お尻・背中の神経/脊髄損傷・骨折などが報告されている。</li>
-          <li class="k-point"><strong>首を勢いよく「ボキッ」は要注意：</strong>頚椎への急激な回転伸展操作（スラスト法）は損傷の危険が大きいとして、厚生労働省の通知（平成3年）でも危険性が指摘されている。</li>
-          <li class="k-point"><strong>広告にはルールがある：</strong>整体は医療行為ではないため「治療」「治る」「診療」など医療を連想させる表現は使用禁止。りのは「改善」「加療」を使うようにしている。</li>
-          <li class="k-point"><strong>選ぶ時のチェック：</strong>①口コミが不自然な絶賛ばかりでないか ②「医師推薦」「○○が改善」に根拠が添えられているか ③フォロワー数やビフォーアフターの印象だけで決めていないか。</li>
-        </ul>
-        <div class="k-quote">「機械は新品交換できますが、体は一生もの。納得して任せられる人を選んでくださいね。」</div>
-        <span class="k-posts-tag">関連投稿：298・300回目（60〜66・78〜83回目もあわせて）</span>
-      </div>
-      </details>
-
-      <details class="k-item" id="k-rom" data-kcat="basics">
-      <summary>
-        <span class="k-icon">📐</span>
-        <span class="k-label">関節の可動域（動く範囲）</span>
-        <span class="k-no">310〜313回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>可動域とは：</strong>その関節をどこまで動かせるかという範囲のこと。「肩が上がりにくい」「しゃがみにくい」は可動域が狭くなってきたサインのことがある。</li>
-          <li class="k-point"><strong>セルフチェックの目安：</strong>肩＝腕を前から真上まで／肘＝しっかり曲げて真っすぐ伸ばせる／手首＝手のひら側にも甲側にも反らせる／股関節＝太ももをお腹に近づけ、横に開ける／膝＝かかとがお尻に近づくまで曲がり、真っすぐ伸びる／足首＝つま先を上げ下げできる。</li>
-          <li class="k-point"><strong>参考値はあるが個人差がある：</strong>日本整形外科学会・日本リハビリテーション医学会の「関節可動域表示ならびに測定法」に基づく参考値がある。ただし生まれつき広い人・硬い人もいて、正常範囲は"参考値"。人によって可動域は違う。</li>
-          <li class="k-point"><strong>手首の回内・回外は特に大切：</strong>ドアノブを回す・キーボード（回内）、お釣りを受け取る・お椀を持つ（回外）など生活動作に直結。りのの施術でも必ず確認する場所。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：310〜313回目</span>
-      </div>
-      </details>
-
-      <details class="k-item" id="k-nerve" data-kcat="basics">
-      <summary>
-        <span class="k-icon">🧠</span>
-        <span class="k-label">神経は再生するのか？</span>
-        <span class="k-no">344回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>結論：神経には回復する力がある。</strong>ただし種類によって違う。</li>
-          <li class="k-point"><strong>末梢神経（手足へ伸びる神経）：</strong>原因が改善されれば少しずつ回復する可能性がある。一般に1日約1mm程度の速度で再生すると考えられている。</li>
-          <li class="k-point"><strong>中枢神経（脳・脊髄）：</strong>現在の医学では自然な再生は非常に難しいとされている。</li>
-          <li class="k-point"><strong>圧迫されているだけの状態も多い：</strong>脊柱管狭窄症などでは神経が完全に壊れているのではなく、圧迫で本来の働きができていないだけのことも少なくない。圧迫を減らす・血流を改善する・動きを整えることで改善する方も多い（適切な運動療法が必要）。</li>
-          <li class="k-point"><strong>だからこそ早めの評価を：</strong>ダメージが長期間続くと回復に限界が出ることもある。「年齢だから」と諦めず、早めに適切な評価・リハビリ・加療を。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：344回目</span>
-      </div>
-      </details>
-
-      <h3 class="k-group-heading" id="kgroup-shoulder" data-kcat="shoulder">
-        <span class="k-group-icon">🟢</span><span class="k-group-label">首・肩</span>
-      </h3>
-      <details class="k-item" id="k-frozen-shoulder" data-kcat="shoulder">
-      <summary>
-        <span class="k-icon">🟢</span>
-        <span class="k-label">五十肩・肩の拘縮</span>
-        <span class="k-no">35〜40・177〜181回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>五十肩とは：</strong>肩関節周囲炎。靭帯・腱板・関節の袋が炎症・線維化を起こす。40〜60代に多い。「治った」と思っても再発することがある。</li>
-          <li class="k-point"><strong>なぜ痛みが出るか：</strong>肩関節のインナーマッスルが上手に働かず、骨がスムーズに動かないため。腕を上げるときに「ガッ」とぶつかるように痛む。</li>
-          <li class="k-point"><strong>拘縮：</strong>関節が固まってしまった状態。役割をもつ靭帯が炎症・肥厚することで起こる。</li>
-          <li class="k-point"><strong>大切なインナーマッスル：</strong>肩甲下筋（回旋筋腱板の一つ）と上腕三頭筋。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：35〜40・177〜181回目</span>
-      </div>
-      </details>
-
-      <details class="k-item" id="k-stoop" data-kcat="shoulder">
-      <summary>
-        <span class="k-icon">🟢</span>
-        <span class="k-label">猫背・いかり肩</span>
-        <span class="k-no">215〜230回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>猫背の人がんばり筋：</strong>斜角筋（首〜肩）・小胸筋・大胸筋・腕の力こぶ（上腕二頭筋）・腕橈骨筋が硬くなりやすい。</li>
-          <li class="k-point"><strong>歩き方との関係：</strong>猫背の人は腕の振り方が崩れ、肩から先の動きが小さくなる。</li>
-          <li class="k-point"><strong>チェック方法：</strong>肩関節の動きを確認する（腕を前・横・後ろに上げて可動域を確認）。</li>
-          <li class="k-point"><strong>良い姿勢を意識する必要はある？：</strong>無理に「良い姿勢」を意識し続けるより、さぼり筋を鍛えて自然にキープできる身体を作る方が大切。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：215〜230回目</span>
-      </div>
-      </details>
-
-      <h3 class="k-group-heading" id="kgroup-back" data-kcat="back">
-        <span class="k-group-icon">🔵</span><span class="k-group-label">腰・背中</span>
-      </h3>
-      <details class="k-item" id="k-back-pain" data-kcat="back">
-      <summary>
-        <span class="k-icon">🔵</span>
-        <span class="k-label">腰痛・丸腰・反り腰・ぎっくり腰</span>
-        <span class="k-no">10〜14・125〜141回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>共通してがんばり筋になりやすい筋肉：</strong>「腰方形筋」。緊急時は仰向けでテニスボールを当てて動かすとほぐれる（根本解決にはならない）。</li>
-          <li class="k-point"><strong>丸腰（受け腰）の人：</strong>腸腰筋が強くてよく働いている。腹横筋・内側ハムストリングが弱い。お尻が硬くなりやすい。</li>
-          <li class="k-point"><strong>反り腰の人：</strong>腸腰筋・内側ハムストリング・後脛骨筋・足内在筋が弱い。多裂筋・大腿直筋が過剰に働く。</li>
-          <li class="k-point"><strong>仙腸関節炎：</strong>腰よりやや低い場所が痛む。転倒・出産・長時間の不良姿勢が原因になることも。腸腰筋のトレーニングが効果的。</li>
-          <li class="k-point"><strong>ぎっくり腰：</strong>急性腰痛症。「また起こす人」は原因（さぼり筋）が解決されていないから。天気が悪い日に腰が痛くなるのは気圧変化が神経に影響するため。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：10〜14・125〜135・138〜141回目</span>
-      </div>
-      </details>
-
-      <details class="k-item" id="k-stenosis" data-kcat="back">
-      <summary>
-        <span class="k-icon">🔵</span>
-        <span class="k-label">脊柱管狭窄症</span>
-        <span class="k-no">327〜349回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>どんな病気か：</strong>背骨の中の神経の通り道「脊柱管」が、加齢や長年の負担で狭くなり、神経が圧迫されて腰や足に痛み・しびれが出る状態。50歳以上に多く、60歳前後で約10人に1人。中高年の腰トラブルの代表格。</li>
-          <li class="k-point"><strong>特徴的な症状「間欠性跛行」：</strong>歩くと足・腰が痛くしびれて歩けなくなり、少し休むとまた歩ける、の繰り返し。「歩ける距離が短くなってきた」は大切なサイン。</li>
-          <li class="k-point"><strong>前かがみで楽になる理由：</strong>反らすと脊柱管は狭くなり、前かがみになると広がって神経の圧迫がゆるむ。カート・自転車は平気で、真っすぐ立って歩く・反ると悪化するのはこのため。</li>
-          <li class="k-point"><strong>しびれと血流：</strong>神経が圧迫されると神経への血流（酸素・栄養）が不足し、歩くとさらに足りずしびれ・痛みが出る、と考えられている（腰部脊柱管狭窄症診療ガイドライン）。原因は血流だけでなく圧迫や炎症など複数が重なる。</li>
-          <li class="k-point"><strong>ヘルニアとの違い：</strong>ヘルニアは比較的若年・前かがみで悪化・座位がつらい。狭窄症は中高年・反ると悪化・歩くと症状（間欠性跛行）。楽な姿勢が正反対のことが多い。</li>
-          <li class="k-point"><strong>すぐ受診すべき危険サイン（馬尾症状）：</strong>尿が出にくい・残尿感・頻尿／便のコントロールが難しい／両足の強いしびれ・脱力／足の力がどんどん弱くなる。放置すると回復が難しくなることがあり、セルフケアより先に医療機関へ。</li>
-          <li class="k-point"><strong>運動が中心：</strong>ガイドラインでも運動療法が保存療法の中心。狭窄そのものを治すのではなく、体幹・お尻を強化して腰椎を安定させ、柔軟性・血流を改善し、痛みへの過敏さを和らげる。基本は「腰を丸める」方向（ニートゥチェスト、ドローイン等）。反らす運動は悪化させることがあり注意。</li>
-          <li class="k-point"><strong>歩く練習は「症状が出る前に休む」：</strong>痛みを我慢して歩くのは逆効果。出る前に座る・前かがみで休み、回復したらまた歩く。水中ウォーキングもおすすめ。</li>
-          <li class="k-point"><strong>足指・足首も大切：</strong>腰だけでなく股関節・足関節・足指の機能を整えると歩きやすさにつながる。足指を握る運動や後脛骨筋（すね内側）の運動が効果的なケースがある。</li>
-          <li class="k-point"><strong>不安の悪循環に注意：</strong>「また痛くなったら」という恐怖で動かなくなると筋力・バランスが落ち、さらに動けなくなる（恐怖回避モデル）。安全な範囲で少しずつ動き「できた」を積み重ねることが大切。</li>
-        </ul>
-        <div class="k-quote">「年齢のせいだから仕方ない、と諦める前に。診断を受けた後どう行動するかで、その後の人生は大きく変わる可能性があります。」</div>
-        <span class="k-posts-tag">関連投稿：327〜349回目</span>
-      </div>
-      </details>
-
-      <h3 class="k-group-heading" id="kgroup-hand" data-kcat="hand">
-        <span class="k-group-icon">🟠</span><span class="k-group-label">腕・肘・手</span>
-      </h3>
-      <details class="k-item" id="k-tendinitis" data-kcat="hand">
-      <summary>
-        <span class="k-icon">🟠</span>
-        <span class="k-label">腱鞘炎・手首・指のトラブル</span>
-        <span class="k-no">15〜26回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>腱鞘炎とは：</strong>「使いすぎて熱を持っている状態（炎症）」。安静・冷却・痛み止めで楽になるが、さぼり筋を鍛えないと再発する。</li>
-          <li class="k-point"><strong>腱鞘炎の本当の原因：</strong>手首のトラブルが、実は肩甲骨まわりの筋力低下から来ることも多い。右手首の腱鞘炎が左肩のトラブルだったケースも。</li>
-          <li class="k-point"><strong>ヘバーデン結節：</strong>指の第一関節の変形。女性がなりやすい（ホルモンの影響・指の使いすぎ・遺伝）。気づかないうちに変形が進むことがある。</li>
-          <li class="k-point"><strong>ブシャール結節：</strong>指の第二関節の変形。関節リウマチと間違えやすい。足の指と手の指は密接に関係している。</li>
-          <li class="k-point"><strong>改善の鍵：</strong>手の土台となる「手内在筋」を鍛えること。指先の負担を減らし、手の中心から力を使えるようにする。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：15〜26回目・188〜190回目</span>
-      </div>
-      </details>
-
-      <details class="k-item" id="k-elbow" data-kcat="hand">
-      <summary>
-        <span class="k-icon">🟠</span>
-        <span class="k-label">テニス肘・ゴルフ肘・野球肘</span>
-        <span class="k-no">27〜34回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>肘の痛みの部位：</strong>テニス肘→外側、ゴルフ肘→内側、野球肘→内側・外側どちらもあり（変化球の種類による）。</li>
-          <li class="k-point"><strong>本当の原因は手首：</strong>「肘の痛み」なのに、主な原因は手首にある。肘の外側→親指側の手首トレーニング、内側→小指側の手首トレーニングが必要。</li>
-          <li class="k-point"><strong>肘頭（とんがり）の痛み：</strong>手首より肩関節のトレーニングが重要になる。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：27〜34回目</span>
-      </div>
-      </details>
-
-      <details class="k-item" id="k-cm" data-kcat="hand">
-      <summary>
-        <span class="k-icon">👍</span>
-        <span class="k-label">CM関節症（親指の付け根の痛み）</span>
-        <span class="k-no">302〜306・315〜326回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>どんな症状か：</strong>親指の付け根（CM関節）の痛み。瓶のフタを開ける・タオルを絞るなど、親指に力を入れた時に痛む。</li>
-          <li class="k-point"><strong>進行のサイン：</strong>初期は「力を入れた時だけ」の痛み。中期は軟骨がすり減り、じっとしていても痛み・熱感。進行すると亜脱臼し、付け根が手のひら側に入り指先が反り返る「カモノハシ変形（Z型変形）」が出ることも。「動いた時だけの痛み」を放置しないことが第一歩。</li>
-          <li class="k-point"><strong>放置すると：</strong>親指をかばい手首・肘・反対の手に負担が集中／つまむ・ひねる動作が徐々に困難に／変形が進むと手術が必要なケースも。「まだ大丈夫」の今が一番選択肢が多い時期。痛みや動かしづらさがあれば、まず病院で関節の状態・炎症を確認。</li>
-          <li class="k-point"><strong>ケア①ゆるめる：</strong>親指を閉じる筋肉「母指内転筋」が硬くなりやすい。ストレッチ（親指を手のひらから離す方向にゆっくり引き、10〜15秒）や、付け根のセルフリリースでゆるめる。</li>
-          <li class="k-point"><strong>ケア②鍛える：</strong>ゆるめた上で、手首を支える筋肉のトレーニング（手首を曲げ続けて手首〜肘に力感、10秒×3回など）を組み合わせるとより効果的。</li>
-          <li class="k-point"><strong>手首トラブル全般にも：</strong>腱鞘炎・テニス肘・野球肘・バネ指・指の変形とも関わる。手首を支える筋肉（尺側/橈側手根屈筋）を、関節に近い側・肘に近い側の両方から鍛える視点が新しく検証されている。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：302〜306・315〜326回目</span>
-      </div>
-      </details>
-
-      <details class="k-item" id="k-bottle" data-kcat="hand">
-      <summary>
-        <span class="k-icon">🍶</span>
-        <span class="k-label">握力があるのにペットボトルが開けられない問題</span>
-        <span class="k-no">188〜190回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>なぜ開けられないか：</strong>握力ではなく「手の中の筋肉（手内在筋）」の問題。親指側の筋肉が弱いと、力が指先だけに集中してしまう。</li>
-          <li class="k-point"><strong>解決法：</strong>親指側・小指側の手内在筋をそれぞれトレーニングすることで改善が期待できる。→「親指ギュー」「小指ぎゅー」が効果的。</li>
-        </ul>
-        <div class="k-quote">「握力があっても開けられないのは、手の中の土台の筋肉が働いていないから。」</div>
-        <span class="k-posts-tag">関連投稿：188〜190回目</span>
-      </div>
-      </details>
-
-      <h3 class="k-group-heading" id="kgroup-knee" data-kcat="knee">
-        <span class="k-group-icon">🟡</span><span class="k-group-label">太もも・膝</span>
-      </h3>
-      <details class="k-item" id="k-knee" data-kcat="knee">
-      <summary>
-        <span class="k-icon">🟡</span>
-        <span class="k-label">膝のトラブル・膝の裏の痛み</span>
-        <span class="k-no">147〜149・213〜214回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>膝が痛い人の共通点：</strong>「がんばり筋をより鍛えたことで悪化」するケースが多い。正しいさぼり筋を見極めてトレーニングすることが大切。</li>
-          <li class="k-point"><strong>膝の裏の痛み：</strong>立ち上がりの際に膝の裏が痛む場合、スネ夫（内側）と膝かっくんのトレーニングが効果的なことが多い。</li>
-          <li class="k-point"><strong>水泳選手のケース：</strong>平泳ぎで膝の内側・裏が痛む70代の方→「がんばり筋だけを鍛えていた」ことが原因。さぼり筋を鍛えることで改善。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：147〜149・213〜214回目</span>
-      </div>
-      </details>
-
-      <h3 class="k-group-heading" id="kgroup-foot" data-kcat="foot">
-        <span class="k-group-icon">🟣</span><span class="k-group-label">脛・足</span>
-      </h3>
-      <details class="k-item" id="k-calf" data-kcat="foot">
-      <summary>
-        <span class="k-icon">🟣</span>
-        <span class="k-label">ふくらはぎ・こむら返り・踵上げ</span>
-        <span class="k-no">67〜76回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>踵上げの注意点：</strong>ふくらはぎが硬い人・日頃から攣る人が踵上げをすると、さらに疲労が溜まり悪化することがある。</li>
-          <li class="k-point"><strong>なぜ攣るか（4つの原因）：</strong>①水分・電解質のバランス崩れ、②神経と筋肉の信号のズレ、③筋疲労、④血流不足（冷え・むくみ・靴下の締め付け）。</li>
-          <li class="k-point"><strong>本当の原因：</strong>ふくらはぎが硬くなる根本は「脛（スネ）の外側・内側の筋肉が上手に働かない」ため。この筋肉を鍛えることが改善の鍵。</li>
-          <li class="k-point"><strong>静脈瘤について：</strong>静脈の弁が壊れて血液が逆流する病気。長時間立ち仕事・妊娠・出産が原因になることも。症状がある場合は医療機関へ。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：67〜77回目</span>
-      </div>
-      </details>
-
-      <details class="k-item" id="k-cold-feet" data-kcat="foot">
-      <summary>
-        <span class="k-icon">🟣</span>
-        <span class="k-label">足先の冷え・外反母趾</span>
-        <span class="k-no">89〜94・104〜107回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>足先の冷えの原因：</strong>①血管収縮で血流悪化、②筋肉量不足で熱が生まれにくい（ふくらはぎ・太ももが弱い）。</li>
-          <li class="k-point"><strong>反り腰と外反母趾の関係：</strong>反り腰の方は外反母趾になりやすい（経験上ほぼ100%）。直接の因果関係の論文は少ないが、運動学的に関係性がある。</li>
-          <li class="k-point"><strong>隠れ外反母趾チェック：</strong>足の指をグーにした時に親指が曲がりにくい→可能性あり。足裏の筋肉（足内在筋）の強化が大切。</li>
-          <li class="k-point"><strong>タオルを活用：</strong>外反母趾の方は親指と人差し指の間にタオルを挟んでトレーニングすると効果的。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：89〜94・104〜107回目</span>
-      </div>
-      </details>
-
-      <details class="k-item" id="k-achilles" data-kcat="foot">
-      <summary>
-        <span class="k-icon">🟣</span>
-        <span class="k-label">アキレス腱のトラブル</span>
-        <span class="k-no">160〜164回目</span>
-      </summary>
-      <div class="k-body">
-        <ul class="k-points">
-          <li class="k-point"><strong>アキレス腱の痛みの確認：</strong>アキレス腱を指でつまんで痛む・手のひらで触れるだけで痛む場合は要注意。</li>
-          <li class="k-point"><strong>ケアの順番：</strong>まずストレッチやケアで状態を整えてから、さぼり筋のトレーニングへ。順番が大切。</li>
-          <li class="k-point"><strong>改善・予防の自主トレ：</strong>足裏・脛の筋肉（足内在筋・スネの筋肉）を鍛えることが根本改善につながる。</li>
-        </ul>
-        <span class="k-posts-tag">関連投稿：160〜164回目</span>
-      </div>
-      </details>
-    
 
     </div>
+
+    <p class="k-dir-note">※ 上の言葉が含まれる投稿を自動で拾って表示します。投稿は要約せず、りのの原文そのままです。自由に言葉を入れて探したい時は、毎日投稿ページの検索もご利用ください。</p>
   </div>
 </section>
 
@@ -556,8 +124,8 @@
 <section class="next-sec">
   <div class="container">
     <div class="next-band">
-      <p class="next-band-text">知識を身につけたら、実践へ</p>
-      <a href="exercises.html" class="next-band-btn">💪 りのトレを始める →</a>
+      <p class="next-band-text">キーワードで自由に探すなら</p>
+      <a href="posts.html" class="next-band-btn">📝 毎日投稿を検索する →</a>
     </div>
   </div>
 </section>
@@ -583,6 +151,5 @@
 <button id="back-to-top" aria-label="ページの先頭へ戻る">↑</button>
 
 <script src="search.js"></script>
-<script src="daily-posts.js"></script>
 </body>
 </html>

@@ -228,6 +228,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const latest = allPosts.reduce((a, b) => (a.num > b.num ? a : b));
   if (updatedEl) updatedEl.textContent = `最終更新: ${latest.date.split(' ')[0]}`;
 
+  // 知識まとめ等からの ?q=キーワード を受け取って初期検索
+  const urlQ = new URLSearchParams(location.search).get('q');
+  if (urlQ) searchQuery = urlQ;
+
   applyView();
 
   // ソート切替
@@ -246,6 +250,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   const searchInput = document.getElementById('dailySearch');
   const searchClear = document.getElementById('dailySearchClear');
   let searchTimer = null;
+  // URLパラメータ由来の検索語を入力欄・チップに反映
+  if (searchQuery) {
+    if (searchInput) searchInput.value = searchQuery;
+    if (searchClear) searchClear.style.display = 'block';
+    document.querySelectorAll('.daily-chip').forEach(c =>
+      c.classList.toggle('active', c.dataset.q === searchQuery));
+  }
   if (searchInput) {
     searchInput.addEventListener('input', e => {
       searchQuery = e.target.value;
