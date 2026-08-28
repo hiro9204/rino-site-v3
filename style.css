@@ -1140,18 +1140,27 @@ footer {
 .about-cta-desc, .footer-note, .ex-desc, .posture-eg, .warning-list li {
   text-wrap: pretty;
 }
+/* 日本語の禁則処理：単語や記号の途中で不自然に切れないようにする */
+.hero-lead, .section-desc, .page-hero-desc, .ex-sec-sub,
+.message-body p, .message-quote, .before-text, .concept-text, .key-msg,
+.about-bio p, .daily-posts-lead, .page-card-desc, .about-cta-desc,
+.footer-note, .ex-desc, .posture-eg, .warning-list li,
+.daily-post-body, .k-dir-intro, .k-dir-note {
+  line-break: strict;
+  overflow-wrap: break-word;   /* はみ出す長い文字列だけ折り返し、単語の途中では切らない */
+  word-break: normal;
+}
 /* 対応ブラウザでは文節（ことばのまとまり）単位で改行する */
 @supports (word-break: auto-phrase) {
   .hero-title, .section-title, .page-hero-title, .ex-sec-title,
   .daily-posts-title, .before-title, .concept-title,
   .hero-lead, .section-desc, .page-hero-desc, .ex-sec-sub,
   .concept-text, .page-card-desc, .about-cta-desc, .footer-note,
-  .next-band-text, .message-quote {
+  .next-band-text, .message-quote, .message-body p, .before-text,
+  .daily-post-body, .k-dir-intro, .ex-desc {
     word-break: auto-phrase;
   }
 }
-/* 長いURL等がはみ出さないように */
-.daily-post-body, .k-point, .message-body { overflow-wrap: anywhere; }
 
 /* スマホ：PC幅向けの改行タグを無効化し、画面幅なりに自然に折り返す */
 @media (max-width: 600px) {
@@ -1232,6 +1241,54 @@ footer {
   font-size: 12.5px; color: var(--light); line-height: 1.9;
   margin-top: 28px; text-align: center;
 }
+
+/* 連載シリーズ一覧 */
+.k-series-head {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 3vw, 26px); font-weight: 600;
+  letter-spacing: 0.04em; color: var(--charcoal);
+  margin: 56px 0 12px; display: flex; align-items: center; gap: 10px;
+}
+.k-series-list {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px;
+}
+@media (max-width: 620px) { .k-series-list { grid-template-columns: 1fr; } }
+.k-series-item {
+  display: flex; flex-direction: column; gap: 5px;
+  background: var(--white); border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px; padding: 18px 20px;
+  text-decoration: none; box-shadow: var(--shadow-s);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.k-series-item:hover {
+  transform: translateY(-3px); box-shadow: var(--shadow);
+  border-left-color: var(--primary);
+}
+.k-series-title {
+  font-size: 15px; font-weight: 600; color: var(--charcoal); line-height: 1.6;
+}
+.k-series-meta {
+  font-family: var(--font-num); font-size: 12px; color: var(--sage);
+  letter-spacing: 0.04em;
+}
+
+/* 毎日投稿：連載シリーズ表示バナー */
+.daily-range-banner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap;
+  background: var(--sage-lt); border: 1px solid rgba(78,140,118,0.3);
+  border-radius: 12px; padding: 14px 18px; margin-bottom: 22px;
+  font-size: 14px; color: var(--primary-deep);
+}
+.daily-range-banner strong { font-weight: 700; }
+.daily-range-banner a {
+  font-size: 13px; font-weight: 600; color: var(--primary);
+  text-decoration: none; white-space: nowrap;
+  padding: 6px 14px; border-radius: 100px; background: var(--white);
+  border: 1px solid var(--border); transition: all var(--transition);
+}
+.daily-range-banner a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
 @media (max-width: 480px) {
   .k-dir-cat { padding: 20px 18px; }
   .k-dir-topic { font-size: 13px; }

@@ -75,21 +75,29 @@ document.addEventListener('DOMContentLoaded', async () => {
   let currentPage= 1;
   let sortOrder  = 'desc';
   let searchQuery= '';
+  let rangeFilter= null;   // 連載シリーズ表示 {from, to, label}
 
   // 検索・並び替えを反映して表示リストを作り直す
   function applyView(resetPage = true) {
+    const base = rangeFilter
+      ? allPosts.filter(p => p.num >= rangeFilter.from && p.num <= rangeFilter.to)
+      : allPosts;
     const q = searchQuery.trim();
     posts = q
-      ? allPosts.filter(p =>
+      ? base.filter(p =>
           p.content.includes(q) ||
           String(p.num).includes(q) ||
           (p.date || '').includes(q))
-      : allPosts.slice();
+      : base.slice();
     posts.sort((a, b) => sortOrder === 'desc' ? b.num - a.num : a.num - b.num);
     if (countEl) {
-      countEl.textContent = q
-        ? `${posts.length}件ヒット（全${allPosts.length}投稿）`
-        : `全${allPosts.length}投稿`;
+      if (rangeFilter) {
+        countEl.textContent = `シリーズ全${posts.length}回（${rangeFilter.from}〜${rangeFilter.to}回目）`;
+      } else {
+        countEl.textContent = q
+          ? `${posts.length}件ヒット（全${allPosts.length}投稿）`
+          : `全${allPosts.length}投稿`;
+      }
     }
     renderPage(resetPage ? 1 : currentPage);
   }
@@ -228,11 +236,30 @@ document.addEventListener('DOMContentLoaded', async () => {
   const latest = allPosts.reduce((a, b) => (a.num > b.num ? a : b));
   if (updatedEl) updatedEl.textContent = `最終更新: ${latest.date.split(' ')[0]}`;
 
-  // 知識まとめ等からの ?q=キーワード を受け取って初期検索
-  const urlQ = new URLSearchParams(location.search).get('q');
+  // 知識まとめ等からの ?q=キーワード / ?from=&to= を受け取って初期表示
+  const params = new URLSearchParams(location.search);
+  const urlQ = params.get('q');
   if (urlQ) searchQuery = urlQ;
+  const from = parseInt(params.get('from'), 10);
+  const to   = parseInt(params.get('to'), 10);
+  if (from && to) {
+    rangeFilter = { from, to, label: params.get('label') || `${from}〜${to}回目` };
+    sortOrder = 'asc';   // 連載は最初から順に読む
+  }
 
   applyView();
+
+  // 連載シリーズ表示中はバナーを出す
+  if (rangeFilter) {
+    const banner = document.createElement('div');
+    banner.className = 'daily-range-banner';
+    banner.innerHTML =
+      `<span>📚 連載シリーズ：<strong>${escapeHtml(rangeFilter.label)}</strong>（${posts.length}回）</span>` +
+      `<a href="posts.html">✕ 全投稿に戻る</a>`;
+    listEl.parentNode.insertBefore(banner, listEl);
+    document.querySelectorAll('.daily-sort-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.order === sortOrder));
+  }
 
   // ソート切替
   document.querySelectorAll('.daily-sort-btn').forEach(btn => {
