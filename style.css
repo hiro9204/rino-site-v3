@@ -1187,6 +1187,30 @@ footer {
   #back-to-top { width: 44px; height: 44px; right: 16px; bottom: 20px; }
 }
 
+/* ─── 毎日投稿：検索＆シリーズ索引 ─── */
+.search-box.daily-search { max-width: 100%; margin: 0 auto 16px; }
+.daily-topic-chips {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  margin-bottom: 30px;
+}
+.daily-topic-label {
+  font-size: 12px; color: var(--mid); font-weight: 600;
+  letter-spacing: 0.04em; margin-right: 2px;
+}
+.daily-chip {
+  font-family: inherit; font-size: 12.5px; font-weight: 500;
+  color: var(--primary); background: var(--white);
+  border: 1.5px solid var(--border);
+  padding: 6px 14px; border-radius: 100px; cursor: pointer;
+  transition: all var(--transition);
+}
+.daily-chip:hover { border-color: var(--primary); background: var(--primary-lt); }
+.daily-chip.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.daily-post-excerpt mark, .daily-post-full mark {
+  background: rgba(201,162,75,0.35); color: inherit;
+  padding: 0 2px; border-radius: 3px; font-weight: 600;
+}
+
 /* ─── 毎日投稿セクション ─── */
 .daily-posts-sec {
   padding: 96px 0;

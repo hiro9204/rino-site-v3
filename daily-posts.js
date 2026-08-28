@@ -70,9 +70,29 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const PAGE_SIZE  = 10;
   const EXCERPT_LEN = 70;
-  let posts      = [];
+  let allPosts   = [];   // 全投稿（元データ）
+  let posts      = [];   // 現在表示中（検索で絞り込んだ結果）
   let currentPage= 1;
   let sortOrder  = 'desc';
+  let searchQuery= '';
+
+  // 検索・並び替えを反映して表示リストを作り直す
+  function applyView(resetPage = true) {
+    const q = searchQuery.trim();
+    posts = q
+      ? allPosts.filter(p =>
+          p.content.includes(q) ||
+          String(p.num).includes(q) ||
+          (p.date || '').includes(q))
+      : allPosts.slice();
+    posts.sort((a, b) => sortOrder === 'desc' ? b.num - a.num : a.num - b.num);
+    if (countEl) {
+      countEl.textContent = q
+        ? `${posts.length}件ヒット（全${allPosts.length}投稿）`
+        : `全${allPosts.length}投稿`;
+    }
+    renderPage(resetPage ? 1 : currentPage);
+  }
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => ({
@@ -82,18 +102,46 @@ document.addEventListener('DOMContentLoaded', async () => {
   function nl2br(s) { return s.replace(/\n/g, '<br>'); }
   function totalPages() { return Math.ceil(posts.length / PAGE_SIZE); }
 
+  // 検索語をハイライト（エスケープ済みテキストに対して実行）
+  function highlight(safeText) {
+    const q = searchQuery.trim();
+    if (!q) return safeText;
+    const safeQ = escapeHtml(q);
+    return safeText.split(safeQ).join('<mark>' + safeQ + '</mark>');
+  }
+
   // ページの投稿を描画
   function renderPage(page) {
     currentPage = Math.max(1, Math.min(page, totalPages()));
+
+    // 検索0件
+    if (posts.length === 0) {
+      listEl.innerHTML =
+        `<div class="daily-error">「${escapeHtml(searchQuery)}」に一致する投稿は見つかりませんでした。<br>別のキーワードでお試しください。</div>`;
+      renderPager();
+      return;
+    }
+
     const slice = posts.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+    const q = searchQuery.trim();
 
     listEl.innerHTML = slice.map(p => {
+      // 検索中はヒット箇所の周辺を抜粋、通常は先頭を抜粋
+      let excerptText, hasMore;
+      const idx = q ? p.content.indexOf(q) : -1;
+      if (idx > -1) {
+        const start = Math.max(0, idx - 30);
+        const end = idx + q.length + 45;
+        excerptText = (start > 0 ? '…' : '') + p.content.slice(start, end);
+        hasMore = end < p.content.length;
+      } else {
+        excerptText = p.content.slice(0, EXCERPT_LEN);
+        hasMore = p.content.length > EXCERPT_LEN;
+      }
       const isLong = p.content.length > EXCERPT_LEN;
-      const excerpt = isLong
-        ? nl2br(escapeHtml(p.content.slice(0, EXCERPT_LEN))) + '…'
-        : nl2br(escapeHtml(p.content));
+      const excerpt = highlight(nl2br(escapeHtml(excerptText))) + (hasMore ? '…' : '');
       const fullHtml = isLong
-        ? `<div class="daily-post-full" hidden>${nl2br(escapeHtml(p.content))}</div>
+        ? `<div class="daily-post-full" hidden>${highlight(nl2br(escapeHtml(p.content)))}</div>
            <button class="daily-expand-btn">▼ 続きを読む</button>`
         : '';
       return `
@@ -166,22 +214,21 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     const res = await fetch('posts.json', { cache: 'no-cache' });
     if (!res.ok) throw new Error('HTTP ' + res.status);
-    posts = await res.json();
-    posts.sort((a, b) => b.num - a.num);
+    allPosts = await res.json();
   } catch (e) {
     listEl.innerHTML = '<div class="daily-error">投稿の読み込みに失敗しました。<br>しばらくしてから再度お試しください。</div>';
     return;
   }
 
-  if (posts.length === 0) {
+  if (allPosts.length === 0) {
     listEl.innerHTML = '<div class="daily-error">投稿がまだありません。</div>';
     return;
   }
 
-  if (countEl)    countEl.textContent  = `全${posts.length}投稿`;
-  if (updatedEl)  updatedEl.textContent= `最終更新: ${posts[0].date.split(' ')[0]}`;
+  const latest = allPosts.reduce((a, b) => (a.num > b.num ? a : b));
+  if (updatedEl) updatedEl.textContent = `最終更新: ${latest.date.split(' ')[0]}`;
 
-  renderPage(1);
+  applyView();
 
   // ソート切替
   document.querySelectorAll('.daily-sort-btn').forEach(btn => {
@@ -191,8 +238,42 @@ document.addEventListener('DOMContentLoaded', async () => {
       document.querySelectorAll('.daily-sort-btn').forEach(b =>
         b.classList.toggle('active', b.dataset.order === sortOrder)
       );
-      posts.sort((a, b) => sortOrder === 'desc' ? b.num - a.num : a.num - b.num);
-      renderPage(1);
+      applyView();
+    });
+  });
+
+  // 検索
+  const searchInput = document.getElementById('dailySearch');
+  const searchClear = document.getElementById('dailySearchClear');
+  let searchTimer = null;
+  if (searchInput) {
+    searchInput.addEventListener('input', e => {
+      searchQuery = e.target.value;
+      if (searchClear) searchClear.style.display = searchQuery ? 'block' : 'none';
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(applyView, 200);
+    });
+  }
+  if (searchClear) {
+    searchClear.addEventListener('click', () => {
+      searchQuery = '';
+      searchInput.value = '';
+      searchClear.style.display = 'none';
+      applyView();
+      searchInput.focus();
+    });
+  }
+
+  // シリーズのチップ（タップで検索）
+  document.querySelectorAll('.daily-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const q = chip.dataset.q || '';
+      searchQuery = q;
+      if (searchInput) searchInput.value = q;
+      if (searchClear) searchClear.style.display = q ? 'block' : 'none';
+      document.querySelectorAll('.daily-chip').forEach(c => c.classList.toggle('active', c === chip));
+      applyView();
+      document.getElementById('daily-posts').scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 });
